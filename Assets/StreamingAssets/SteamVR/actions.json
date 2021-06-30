@@ -60,6 +60,10 @@
       "requirement": "mandatory"
     },
     {
+      "name": "/actions/default/in/Y_Touch",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
