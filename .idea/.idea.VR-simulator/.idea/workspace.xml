@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="55a03d9e-2239-4d38-a3b0-62c37356e438" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0DAB12D4-5C2A-4EDC-9335-79280843BDEB/1e/9cee713f/UIEventRegistration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0DAB12D4-5C2A-4EDC-9335-79280843BDEB/bc/1e507fb6/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DDF8EAC-3856-492A-B1B8-CF42618915CC/29/da291f3e/GUIUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0061EBE7-04E1-4329-8A09-6EC5CDD83AE3/78/e1987b6a/InspectorElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6DDF8EAC-3856-492A-B1B8-CF42618915CC/1e/404f1f89/Event.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/b9/acb0e879/MethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/SaveLoad.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/b9/d08b0b40/MulticastDelegate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/24/f7f8368d/BuiltinRuntimeReflectionSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/a0/27466af5/Delegate.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/7e/ce16c5e3/ScriptableRuntimeReflectionSystemWrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/90/6dedccc5/RenderPipelineManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0B8DB76A-688C-4D18-A15D-D7DFE092A035/6e/3cd3ed83/ObjectListArea.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8E296DC-7C7B-4E92-800D-9E996ED99E15/c8/3adf1b4b/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/46/d9739d01/AttributeUsageAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/89/9a15fddb/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/4d/03307efa/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Door.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/21/0a959b10/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/72/d95c1cf1/Thread.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0061EBE7-04E1-4329-8A09-6EC5CDD83AE3/66/b04f415d/RetainedMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Interfaces/ISaveLoad.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0B8DB76A-688C-4D18-A15D-D7DFE092A035/52/4b65ffff/EditorCompilationInterface.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/64/38a8e487/SynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/CustomQuest/Assets/Scripts/Editor/CustomQuestEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/EditorWindow.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/MainWindowEdit.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/MainWindowEventsSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/InputEdgeBox.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/FinishEdgeBox.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/StartEdgeBox.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/Edge.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/NodeEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/MainWindowEventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Condition.cs" />
+      <option value="$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/Util.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/Edge.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/StartEdgeBox.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/FinishEdgeBox.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EmptyNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Nodes/TestNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Nodes/Test2Nodes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Nodes/Test3Nodes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/FinishPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/NodeEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/MainWindowEventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Editor/StartPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Interfaces/ISaveLoad.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Edge.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Interfaces/INode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Nodes/Test2Nodes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Node.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/Node.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Nodes/Test3Nodes.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Nodes/TestNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/EmptyNode.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Condition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Button.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/SaveLoad.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
+    </changedPaths>
+  </component>
+  <component name="ProjectId" id="1ucRcFTYzgeVRMJktFyQJXT1iga" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="55a03d9e-2239-4d38-a3b0-62c37356e438" name="Default Changelist" comment="" />
+      <created>1624962973267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624962973267</updated>
+      <workItem from="1624963004045" duration="22000" />
+      <workItem from="1624963423819" duration="5376000" />
+      <workItem from="1625048250188" duration="4995000" />
+      <workItem from="1625053547804" duration="17092000" />
+      <workItem from="1625125924617" duration="20579000" />
+      <workItem from="1625311672173" duration="15436000" />
+      <workItem from="1625390757378" duration="2344000" />
+      <workItem from="1625485190436" duration="2504000" />
+      <workItem from="1625646176596" duration="12778000" />
+      <workItem from="1625681008343" duration="2945000" />
+      <workItem from="1625736174071" duration="13359000" />
+      <workItem from="1625814265179" duration="19330000" />
+      <workItem from="1625904652595" duration="22999000" />
+      <workItem from="1626005602702" duration="10432000" />
+      <workItem from="1626075184274" duration="25859000" />
+      <workItem from="1626165104054" duration="12729000" />
+      <workItem from="1626190363682" duration="5039000" />
+      <workItem from="1626256402946" duration="2967000" />
+      <workItem from="1626260332098" duration="22898000" />
+      <workItem from="1626425905676" duration="3028000" />
+      <workItem from="1626594036089" duration="18381000" />
+      <workItem from="1626686238023" duration="5712000" />
+      <workItem from="1626768060873" duration="10455000" />
+      <workItem from="1626797278655" duration="1269000" />
+      <workItem from="1626849944205" duration="7335000" />
+      <workItem from="1626938786134" duration="5568000" />
+      <workItem from="1626975695637" duration="1604000" />
+      <workItem from="1627195130010" duration="729000" />
+      <workItem from="1627204430651" duration="15766000" />
+      <workItem from="1627292510676" duration="10044000" />
+      <workItem from="1627320988191" duration="7490000" />
+      <workItem from="1627380980294" duration="10341000" />
+      <workItem from="1627454815101" duration="13499000" />
+      <workItem from="1627554868814" duration="2390000" />
+      <workItem from="1627627490629" duration="15089000" />
+      <workItem from="1627659871658" duration="8642000" />
+      <workItem from="1627713047544" duration="17461000" />
+      <workItem from="1627806291557" duration="4906000" />
+      <workItem from="1627890131033" duration="10172000" />
+      <workItem from="1627972844699" duration="576000" />
+      <workItem from="1627982698549" duration="9296000" />
+      <workItem from="1627995563291" duration="7000" />
+      <workItem from="1628012263150" duration="5111000" />
+      <workItem from="1628058695777" duration="17781000" />
+      <workItem from="1628094384224" duration="915000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs</url>
+          <line>57</line>
+          <properties documentPath="D:\unity\VR-simulator\Assets\Scripts\EventSystem\EventSystem.cs" initialLine="54" containingFunctionPresentation="method 'Update'">
+            <startOffsets>
+              <option value="1427" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1486" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs</url>
+          <line>41</line>
+          <properties documentPath="D:\unity\VR-simulator\Assets\Scripts\EventSystem\EventSystem.cs" initialLine="42" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="1064" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1095" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
