@@ -153,13 +153,17 @@ namespace Editor
             _finishEdge.Box.position += e.delta;
         }
 
-        public void HandleEvents(Event e)
+        public void HandleEvents(Event e, bool isMoveAllBoxs)
         {
             _startEdge.ForEach(x => x.HandleEvents(e));
             switch (e.type)
             {
                 case EventType.MouseDrag:
-                    if (_boxName.Contains(e.mousePosition))
+                    if (isMoveAllBoxs)
+                    {
+                        MoveBoxes(e);
+                    }
+                    else if (_boxName.Contains(e.mousePosition))
                     {
                         MoveBoxes(e);
                     }
