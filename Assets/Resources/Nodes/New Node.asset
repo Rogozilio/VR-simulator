@@ -19,7 +19,7 @@ MonoBehaviour:
   _nameAction:
   - Hello
   Name: Button
-  IsUse: 1
+  IsUse: 0
   Number: 0
   Conditions:
   - Value:

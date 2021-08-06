@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="55a03d9e-2239-4d38-a3b0-62c37356e438" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Nodes/Door.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Nodes/Door.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Nodes/New Node.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Nodes/New Node.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" afterDir="false" />
     </list>
@@ -91,8 +93,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/SaveLoad.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ucRcFTYzgeVRMJktFyQJXT1iga" />
@@ -184,7 +186,7 @@
       <workItem from="1628012263150" duration="5111000" />
       <workItem from="1628058695777" duration="17781000" />
       <workItem from="1628094384224" duration="915000" />
-      <workItem from="1628233507034" duration="6506000" />
+      <workItem from="1628233507034" duration="8554000" />
     </task>
     <servers />
   </component>

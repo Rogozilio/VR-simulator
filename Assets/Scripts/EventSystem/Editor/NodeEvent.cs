@@ -27,6 +27,8 @@ namespace Editor
         private StartPoint[] _startEdge;
         private FinishPoint _finishEdge;
 
+        private bool _isBoxMove = false;
+
         public Rect Box => _box;
         public Node Data => _data;
         public StartPoint[] Start => _startEdge;
@@ -158,12 +160,22 @@ namespace Editor
             _startEdge.ForEach(x => x.HandleEvents(e));
             switch (e.type)
             {
+                case EventType.MouseDown:
+                    if (_boxName.Contains(e.mousePosition))
+                    {
+                        _isBoxMove = true;
+                    }
+
+                    break;
+                case EventType.MouseUp:
+                    _isBoxMove = false;
+                    break;
                 case EventType.MouseDrag:
                     if (isMoveAllBoxs)
                     {
                         MoveBoxes(e);
                     }
-                    else if (_boxName.Contains(e.mousePosition))
+                    else if (_isBoxMove)
                     {
                         MoveBoxes(e);
                     }

@@ -58,16 +58,9 @@ namespace Editor
 
         private void OnGUI()
         {
-            if (_isMoveAllBoxs)
-            {
-                EditorGUIUtility.AddCursorRect(
-                    new Rect(0, 0, Screen.width, Screen.height), MouseCursor.Pan);
-            }
-            else
-            {
-                EditorGUIUtility.AddCursorRect(
-                    new Rect(0, 0, Screen.width, Screen.height), MouseCursor.Arrow);
-            }
+            EditorGUIUtility.AddCursorRect(
+                new Rect(0, 0, Screen.width, Screen.height),
+                (_isMoveAllBoxs) ? MouseCursor.Pan : MouseCursor.Arrow);
 
             HandleEvent(Event.current);
 
