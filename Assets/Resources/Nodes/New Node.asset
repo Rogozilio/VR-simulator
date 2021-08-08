@@ -16,13 +16,23 @@ MonoBehaviour:
   _nameScript: Button
   _nameProperty:
   - Buttone
+  - Buttone
+  - Buttone
   _nameAction:
   - Hello
   Name: Button
   IsUse: 0
-  Number: 0
+  Number: 1
   Conditions:
   - Value:
       NameProperty: Buttone
       Opertor: 2
+      Value: 1
+  - Value:
+      NameProperty: Buttone
+      Opertor: 1
+      Value: 5
+  - Value:
+      NameProperty: Buttone
+      Opertor: 0
       Value: 1

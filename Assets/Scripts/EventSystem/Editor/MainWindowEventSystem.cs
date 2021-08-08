@@ -17,7 +17,7 @@ namespace Editor
         private int[,] _linkNodes
             = new int[Node.Nodes.Count, Node.Nodes.Count];
 
-
+        
         private StartPoint _startPoint;
         private FinishPoint _finishPoint;
         private Edge _edge = new Edge();

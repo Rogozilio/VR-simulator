@@ -19,5 +19,5 @@ MonoBehaviour:
   - OpenDoor
   Name: door
   IsUse: 0
-  Number: 1
+  Number: 0
   Conditions: []

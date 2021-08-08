@@ -3,10 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="55a03d9e-2239-4d38-a3b0-62c37356e438" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Connections.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Nodes/Door.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Nodes/Door.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Nodes/New Node.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Nodes/New Node.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/StartPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/StartPoint.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +42,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Button.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/a0/27466af5/Delegate.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/7e/ce16c5e3/ScriptableRuntimeReflectionSystemWrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/49/13b09d36/Rect.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/127E81E1-CB34-41CC-97D2-6B1910DAAE77/90/6dedccc5/RenderPipelineManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0B8DB76A-688C-4D18-A15D-D7DFE092A035/6e/3cd3ed83/ObjectListArea.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8E296DC-7C7B-4E92-800D-9E996ED99E15/c8/3adf1b4b/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
@@ -94,6 +98,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/SaveLoad.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/StartPoint.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
     </changedPaths>
   </component>
@@ -186,7 +192,9 @@
       <workItem from="1628012263150" duration="5111000" />
       <workItem from="1628058695777" duration="17781000" />
       <workItem from="1628094384224" duration="915000" />
-      <workItem from="1628233507034" duration="8554000" />
+      <workItem from="1628233507034" duration="15628000" />
+      <workItem from="1628318623490" duration="13503000" />
+      <workItem from="1628410201554" duration="478000" />
     </task>
     <servers />
   </component>
