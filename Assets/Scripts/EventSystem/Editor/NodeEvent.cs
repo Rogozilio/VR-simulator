@@ -46,6 +46,7 @@ namespace Editor
         public NodeEvent(Node data, Vector2 position)
         {
             _data = data;
+            CheckWidthFromName();
             InitBox(position);
             _styleTexture = new GUIStyle() {alignment = TextAnchor.MiddleCenter};
             _textureBox = InitTextureBox((int) _box.width, (int) _box.height
@@ -78,6 +79,28 @@ namespace Editor
             return texture;
         }
 
+        private void CheckWidthFromName()
+        {
+            float countMark = _data.Name.Length;
+            float lengthMark = 9.5f;
+
+            foreach (var condition in _data.GetConditions())
+            {
+                if (condition.Text.Length > countMark)
+                {
+                    countMark = condition.Text.Length;
+                }
+            }
+            foreach (var action in _data.GetActions())
+            {
+                if (action.Method.Name.Length > countMark)
+                {
+                    countMark = action.Method.Name.Length;
+                }
+            }
+
+            _width = (lengthMark * countMark);
+        }
         private void InitBox(Vector2 position)
         {
             InitBoxName(_data.Name, position);
@@ -106,8 +129,8 @@ namespace Editor
                 for (int i = 0; i < conditions.Count; i++)
                 {
                     Rect box = new Rect(
-                        position + new Vector2(_width * 0.2f, _heightString * (i + 1))
-                        , new Vector2(_width * 0.6f, _heightString));
+                        position + new Vector2(_heightString, _heightString * (i + 1))
+                        , new Vector2(_width - (_heightString * 2), _heightString));
                     _boxCondition[i] = box;
                     _textCondition[i] = conditions.ToArray()[i].Text;
                     InitBoxStart(box.position + new Vector2(box.width, 0), i);
@@ -116,8 +139,8 @@ namespace Editor
             else
             {
                 Rect box = new Rect(
-                    position + new Vector2(_width * 0.2f, _heightString * 1)
-                    , new Vector2(_width * 0.6f, _heightString));
+                    position + new Vector2(_heightString, _heightString)
+                    , new Vector2(_width - (_heightString * 2), _heightString));
                 _boxCondition = new Rect[1];
                 _textCondition = new string[1] {""};
                 _boxCondition[0] = box;
@@ -127,8 +150,8 @@ namespace Editor
 
         private void InitBoxStart(Vector2 position, int i)
         {
-            _boxStart[i] = new Rect(position + Vector2.one * 2f,
-                new Vector2(_width * 0.2f - 4f, _heightString - 4f));
+            _boxStart[i] = new Rect(position + Vector2.one,
+                new Vector2(_heightString - 2f, _heightString - 2f));
             _startEdge[i] = new StartPoint(this, _boxStart[i], i + 1);
         }
 
@@ -137,7 +160,7 @@ namespace Editor
             _boxStart = new Rect[1];
             _startEdge = new StartPoint[1];
             _boxStart[0] = new Rect(position,
-                new Vector2(_width * 0.2f, _heightString));
+                new Vector2(_heightString, _heightString));
             _startEdge[0] = new StartPoint(this, _boxStart[0], 0 + 1);
         }
 
@@ -146,15 +169,15 @@ namespace Editor
             if (_data.Conditions.Count != 0)
             {
                 _boxFinish = new Rect(position + new Vector2(0, _boxName.height),
-                    new Vector2(_width * 0.2f, _heightString * _boxCondition.Length));
+                    new Vector2(_heightString, _heightString * _boxCondition.Length));
             }
             else
             {
                 _boxFinish = new Rect(position + new Vector2(0, _boxName.height),
-                    new Vector2(_width * 0.2f, _heightString));
+                    new Vector2(_heightString, _heightString));
             }
 
-            _finishEdge = new FinishPoint(_boxFinish, Color.black, this);
+            _finishEdge = new FinishPoint(_boxFinish, this);
 
             _boxAction = new Rect[_data.GetActions().Count];
             _textAction = new string[_data.GetActions().Count];

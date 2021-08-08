@@ -23,7 +23,7 @@ namespace Editor
                 _isUse = value;
                 if (_isUse)
                 {
-                    _color = Color.yellow;
+                    _color = new Color32(1, 189, 232, 255);;
                 }
                 else
                 {
@@ -32,10 +32,10 @@ namespace Editor
             }
         }
 
-        public FinishPoint(Rect box, Color color, NodeEvent node)
+        public FinishPoint(Rect box, NodeEvent node)
         {
             Box = box;
-            _color = color;
+            _color = Color.black;
             _node = node;
         }
 
