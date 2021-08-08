@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="55a03d9e-2239-4d38-a3b0-62c37356e438" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Edge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Edge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +84,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Nodes/TestNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/EmptyNode.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Condition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/SaveLoad.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
@@ -97,6 +94,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Button.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ucRcFTYzgeVRMJktFyQJXT1iga" />
@@ -190,7 +188,8 @@
       <workItem from="1628094384224" duration="915000" />
       <workItem from="1628233507034" duration="15628000" />
       <workItem from="1628318623490" duration="13503000" />
-      <workItem from="1628410201554" duration="7710000" />
+      <workItem from="1628410201554" duration="7916000" />
+      <workItem from="1628422270050" duration="1593000" />
     </task>
     <servers />
   </component>
