@@ -1168,14 +1168,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236411439}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: -1.5000002, y: 1.175, z: -0.1875}
   m_LocalScale: {x: 0.25, y: 0.014999999, z: 0.25}
   m_Children:
   - {fileID: 1704471429}
   m_Father: {fileID: 524496368}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
 --- !u!1 &251854805
 GameObject:
   m_ObjectHideFlags: 0
@@ -2314,7 +2314,7 @@ GameObject:
   - component: {fileID: 484355494}
   - component: {fileID: 484355493}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: ArrowOUT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2346,10 +2346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb143f88113520545bbad0b2409afe1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minPressure: 0
-  maxPressure: 100
-  targetPressure: 0
+  PS: {fileID: 1708075003}
+  isOUT: 1
   currentPressure: 0
+  targetPressure: 0
   arrowAcceleration: 256
 --- !u!136 &484355494
 CapsuleCollider:
@@ -3768,6 +3768,7 @@ GameObject:
   - component: {fileID: 939208224}
   - component: {fileID: 939208223}
   - component: {fileID: 939208222}
+  - component: {fileID: 939208227}
   m_Layer: 0
   m_Name: RotationZone
   m_TagString: Untagged
@@ -3816,14 +3817,38 @@ MonoBehaviour:
   freezeOnMin: 0
   onMinAngle:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 939208227}
+        m_TargetAssemblyTypeName: LeverMinMaxCheck, Assembly-CSharp
+        m_MethodName: OnMinAngle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   maxAngle: 45
   freezeOnMax: 0
   onMaxAngle:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 939208227}
+        m_TargetAssemblyTypeName: LeverMinMaxCheck, Assembly-CSharp
+        m_MethodName: OnMaxAngle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   forceStart: 1
-  startAngle: 45
+  startAngle: -45
   rotateGameObject: 1
   debugPath: 0
   dbgPathLimit: 50
@@ -3944,6 +3969,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939208220}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &939208227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939208220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7244176a71da1a84b8df43cab177f3c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PS: {fileID: 1708075003}
+  PMeter: {fileID: 484355493}
 --- !u!1 &971592574
 GameObject:
   m_ObjectHideFlags: 0
@@ -4695,6 +4734,7 @@ GameObject:
   - component: {fileID: 1216523171}
   - component: {fileID: 1216523175}
   - component: {fileID: 1216523174}
+  - component: {fileID: 1216523176}
   m_Layer: 0
   m_Name: Valve (2)
   m_TagString: Untagged
@@ -4727,7 +4767,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1216523172
@@ -4811,7 +4851,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   forceStart: 1
-  startAngle: -360
+  startAngle: 360
   rotateGameObject: 1
   debugPath: 0
   dbgPathLimit: 50
@@ -4869,6 +4909,18 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &1216523176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216523169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1459ad747df877f40a2d4bc477394338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1225979925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5211,14 +5263,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361101795}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 1.5000002, y: 1.175, z: -0.1875}
   m_LocalScale: {x: 0.25, y: 0.014999999, z: 0.25}
   m_Children:
   - {fileID: 1734708448}
   m_Father: {fileID: 913553326}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 180}
 --- !u!1 &1385071996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5570,7 +5622,7 @@ Transform:
   - {fileID: 1943091162}
   - {fileID: 1536874202}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1510264155
 GameObject:
@@ -5585,7 +5637,7 @@ GameObject:
   - component: {fileID: 1510264158}
   - component: {fileID: 1510264157}
   m_Layer: 0
-  m_Name: Dial
+  m_Name: DialIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5923,7 +5975,7 @@ GameObject:
   - component: {fileID: 1636990023}
   - component: {fileID: 1636990022}
   m_Layer: 0
-  m_Name: Dial
+  m_Name: DialOUT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6020,6 +6072,7 @@ GameObject:
   - component: {fileID: 1662230616}
   - component: {fileID: 1662230620}
   - component: {fileID: 1662230619}
+  - component: {fileID: 1662230621}
   m_Layer: 0
   m_Name: Valve (3)
   m_TagString: Untagged
@@ -6052,7 +6105,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1662230617
@@ -6136,7 +6189,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   forceStart: 1
-  startAngle: 0
+  startAngle: 360
   rotateGameObject: 1
   debugPath: 0
   dbgPathLimit: 50
@@ -6194,6 +6247,18 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &1662230621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662230614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1459ad747df877f40a2d4bc477394338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1676870011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6398,6 +6463,7 @@ GameObject:
   - component: {fileID: 1704471432}
   - component: {fileID: 1704471431}
   - component: {fileID: 1704471430}
+  - component: {fileID: 1704471435}
   m_Layer: 0
   m_Name: Valve (4)
   m_TagString: Untagged
@@ -6435,23 +6501,23 @@ MonoBehaviour:
   childCollider: {fileID: 0}
   linearMapping: {fileID: 0}
   hoverLock: 0
-  limited: 0
+  limited: 1
   frozenDistanceMinMaxThreshold: {x: 0.1, y: 0.2}
   onFrozenDistanceThreshold:
     m_PersistentCalls:
       m_Calls: []
-  minAngle: -45
+  minAngle: -180
   freezeOnMin: 0
   onMinAngle:
     m_PersistentCalls:
       m_Calls: []
-  maxAngle: 45
+  maxAngle: 180
   freezeOnMax: 0
   onMaxAngle:
     m_PersistentCalls:
       m_Calls: []
-  forceStart: 0
-  startAngle: 0
+  forceStart: 1
+  startAngle: 180
   rotateGameObject: 1
   debugPath: 0
   dbgPathLimit: 50
@@ -6572,6 +6638,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704471428}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1704471435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704471428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1459ad747df877f40a2d4bc477394338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1704666177
 GameObject:
   m_ObjectHideFlags: 0
@@ -6605,6 +6683,52 @@ Transform:
   m_Father: {fileID: 1536874202}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1708075002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1708075004}
+  - component: {fileID: 1708075003}
+  m_Layer: 0
+  m_Name: PressureStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1708075003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708075002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69bf67fab9a97a64cb3640c7670b73e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPressureIN: 0
+  startPressureOUT: 0
+  targetPressureOUT: 0
+--- !u!4 &1708075004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708075002}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712599238
 GameObject:
   m_ObjectHideFlags: 0
@@ -6714,6 +6838,7 @@ GameObject:
   - component: {fileID: 1734708449}
   - component: {fileID: 1734708453}
   - component: {fileID: 1734708452}
+  - component: {fileID: 1734708454}
   m_Layer: 0
   m_Name: Valve (1)
   m_TagString: Untagged
@@ -6829,7 +6954,7 @@ MonoBehaviour:
   onMaxAngle:
     m_PersistentCalls:
       m_Calls: []
-  forceStart: 0
+  forceStart: 1
   startAngle: 360
   rotateGameObject: 1
   debugPath: 0
@@ -6888,6 +7013,18 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &1734708454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734708447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1459ad747df877f40a2d4bc477394338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1748547621
 GameObject:
   m_ObjectHideFlags: 0
@@ -8262,7 +8399,7 @@ GameObject:
   - component: {fileID: 2049219719}
   - component: {fileID: 2049219717}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: ArrowIN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8294,10 +8431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb143f88113520545bbad0b2409afe1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minPressure: 0
-  maxPressure: 100
-  targetPressure: 0
+  PS: {fileID: 1708075003}
+  isOUT: 0
   currentPressure: 0
+  targetPressure: 0
   arrowAcceleration: 256
 --- !u!136 &2049219719
 CapsuleCollider:
