@@ -10,6 +10,8 @@ public class bag : MonoBehaviour
     private Quaternion oldRotation;
     public SCADA_Controller SCADA_Controller;
 
+    public bool OnBag = false;
+
     void Start()
     {
         offset = transform.position - Camera.transform.position;
@@ -27,14 +29,14 @@ public class bag : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.tag == "MapCase")&&(SCADA_Controller.onHand==true))
+        if ((other.tag == "MapCase")&&(SCADA_Controller.onHand==false))
         {
             Debug.Log("other.tag " + other.tag);
-            MapCase.transform.position = transform.position;
+            MapCase.transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
             oldRotation = transform.rotation;
             MapCase.transform.rotation = Quaternion.Euler(oldRotation.x, oldRotation.y, 0);
-            MapCase.transform.parent = transform;
-
+            //MapCase.transform.parent = transform;
+            OnBag = true;
         }
         
     }

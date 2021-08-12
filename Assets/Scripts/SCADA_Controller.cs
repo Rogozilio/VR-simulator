@@ -15,9 +15,12 @@ public class SCADA_Controller : MonoBehaviour
     public GameObject scada_image;
     public GameObject transferObjects;
     public GameObject settingsObjects;
-    public GameObject player;
+    //public GameObject player;
     public GameObject InNumber;
     public GameObject OutNumber;
+
+    public GameObject Bag;
+    public bag bag;
 
     public void SetTransferObjects()
     {
@@ -52,7 +55,8 @@ public class SCADA_Controller : MonoBehaviour
     {
         onHand = true;
         GetComponent<Rigidbody>().isKinematic = false;
-        transform.parent = null;
+        //transform.parent = null;
+        bag.OnBag = false;
     }
 
     public void DetachFromHand()
@@ -85,5 +89,14 @@ public class SCADA_Controller : MonoBehaviour
     public void DownOutNumber()
     {
         OutNumber.GetComponent<Text>().text = (Int32.Parse(OutNumber.GetComponent<Text>().text) - 1).ToString();
+    }
+
+    void Update()
+    {
+        if (bag.OnBag)
+        {
+            transform.position = Bag.transform.position;
+            transform.eulerAngles = new Vector3(Bag.transform.eulerAngles.x, Bag.transform.eulerAngles.y - 90, Bag.transform.eulerAngles.z); ;
+        }
     }
 }

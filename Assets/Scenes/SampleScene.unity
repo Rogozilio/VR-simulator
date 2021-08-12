@@ -2164,7 +2164,7 @@ Transform:
   m_GameObject: {fileID: 353484080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0, y: 0, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1604853986}
   m_RootOrder: 1
@@ -3248,7 +3248,7 @@ Transform:
   m_GameObject: {fileID: 513894129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0.15, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1960817107}
   m_RootOrder: 1
@@ -3388,7 +3388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.2, y: 0.1}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_SizeDelta: {x: 0.06, y: 0.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &533610349
 MonoBehaviour:
@@ -3723,7 +3723,7 @@ Transform:
   m_GameObject: {fileID: 558896764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0.15, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 139893815}
   m_RootOrder: 1
@@ -4009,7 +4009,7 @@ Transform:
   m_GameObject: {fileID: 633655686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.1}
   m_Children: []
   m_Father: {fileID: 533610348}
   m_RootOrder: 1
@@ -4304,7 +4304,7 @@ Transform:
   m_GameObject: {fileID: 665922067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1475982925}
   m_RootOrder: 1
@@ -4411,7 +4411,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.15, y: 0.1}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_SizeDelta: {x: 0.06, y: 0.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &683049181
 MonoBehaviour:
@@ -4613,7 +4613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3, y: -0.25}
+  m_AnchoredPosition: {x: -0.3, y: -0.14}
   m_SizeDelta: {x: 0.15, y: 0.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686667571
@@ -5109,7 +5109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.09, y: 0.096}
+  m_AnchoredPosition: {x: 0.075, y: 0.2}
   m_SizeDelta: {x: 0.18, y: 0.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734528068
@@ -5829,7 +5829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6444,7 +6444,7 @@ Transform:
   m_GameObject: {fileID: 980268959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0.15, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1836008950}
   m_RootOrder: 1
@@ -7002,7 +7002,7 @@ MonoBehaviour:
   input:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
-  speed: 2
+  speed: 1.5
   scada: {fileID: 1868068861}
   y_button:
     actionPath: /actions/default/in/Y_btn
@@ -8796,7 +8796,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.3, y: 0.1}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_SizeDelta: {x: 0.06, y: 0.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475982926
 MonoBehaviour:
@@ -9433,7 +9433,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.05, y: 0.1}
-  m_SizeDelta: {x: 0.08, y: 0.08}
+  m_SizeDelta: {x: 0.06, y: 0.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1604853987
 MonoBehaviour:
@@ -10519,7 +10519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachmentFlags: 84
-  attachmentOffset: {fileID: 475303346}
+  attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
   releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
@@ -10600,9 +10600,10 @@ MonoBehaviour:
   scada_image: {fileID: 1565867832}
   transferObjects: {fileID: 1465539768}
   settingsObjects: {fileID: 275488339}
-  player: {fileID: 1035128281}
   InNumber: {fileID: 1711573251}
   OutNumber: {fileID: 638921545}
+  Bag: {fileID: 1882826431}
+  bag: {fileID: 1882826433}
 --- !u!1 &1704471428
 GameObject:
   m_ObjectHideFlags: 0
@@ -11830,7 +11831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12225,7 +12226,7 @@ Transform:
   m_GameObject: {fileID: 1849193904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0.15, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 686667570}
   m_RootOrder: 1
@@ -12346,9 +12347,10 @@ MonoBehaviour:
   scada_image: {fileID: 397022019}
   transferObjects: {fileID: 1847389474}
   settingsObjects: {fileID: 1745867949}
-  player: {fileID: 0}
   InNumber: {fileID: 0}
   OutNumber: {fileID: 0}
+  Bag: {fileID: 0}
+  bag: {fileID: 0}
 --- !u!1 &1882826431
 GameObject:
   m_ObjectHideFlags: 0
@@ -12363,7 +12365,7 @@ GameObject:
   - component: {fileID: 1882826434}
   - component: {fileID: 1882826433}
   - component: {fileID: 1882826437}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Bag
   m_TagString: Bag
   m_Icon: {fileID: 0}
@@ -12399,6 +12401,7 @@ MonoBehaviour:
   MapCase: {fileID: 1702193232}
   Camera: {fileID: 1737333165}
   SCADA_Controller: {fileID: 1702193241}
+  OnBag: 0
 --- !u!65 &1882826434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13501,7 +13504,7 @@ Transform:
   m_GameObject: {fileID: 2031164150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.009}
-  m_LocalScale: {x: 0.15, y: 0.1, z: 0.05}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 0.1}
   m_Children: []
   m_Father: {fileID: 683049180}
   m_RootOrder: 1
