@@ -25,7 +25,7 @@ namespace Valve.VR.InteractionSystem
 			Button button = GetComponent<Button>();
 			if ( button )
 			{
-				button.onClick.AddListener( OnButtonClick );
+			//	button.onClick.AddListener( OnButtonClick );
 			}
 		}
 
@@ -36,7 +36,9 @@ namespace Valve.VR.InteractionSystem
 			currentHand = hand;
 			InputModule.instance.HoverBegin( gameObject );
 			ControllerButtonHints.ShowButtonHint( hand, hand.uiInteractAction);
-		}
+            OnButtonClick();
+
+        }
 
 
         //-------------------------------------------------
