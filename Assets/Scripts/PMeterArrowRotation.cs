@@ -5,47 +5,55 @@ using System;
 
 public class PMeterArrowRotation : MonoBehaviour
 {
-    public int minPressure = 0;
-    public int maxPressure = 100;
+    public PressureStats PS;
+    public bool isOUT;
+
+    private bool areValuesSet = false;
+    private float minPressure = 0f;
+    private float maxPressure = 25f;
     [SerializeField]
-    private int targetPressure = 0;
+    private float currentPressure = 0f;
+    public float CurrentPressure { get { return currentPressure; } }
     [SerializeField]
-    private int currentPressure = 0;
+    private float targetPressure = 0f;
+    public float TargetPressure { get { return targetPressure; } set { targetPressure = value; } }
 
     public float arrowAcceleration = 256f;
 
     private float minAngle = -60f;
     private float maxAngle = 60f;
-    //[SerializeField]
-    private float targetAngle = 0f;
-    //[SerializeField]
     private float currentAngle = 0f;
+    private float targetAngle = 0f;
 
-    // Update is called once per frame
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
-        //if (targetPressure != currentPressure)
-        //{
-            UpdateAngleAndPressure();
-        //}
+        if (!areValuesSet)
+		{
+            if (isOUT)
+            {
+                targetPressure = PS.StartPressureOUT;
+            }
+            else
+            {
+                targetPressure = PS.StartPressureIN;
+            }
+            areValuesSet = true;
+        }
+
+        UpdateAngleAndPressure();
     }
 
-    public int GetCurrentPressure()
-    {
-        return currentPressure;
-    }
-
-    public void SetTargetPressure(int pressure)
-    {
-        targetPressure = pressure;
-    }
-
-    private float ConvertPressureToAngle(int pressure)
+    private float ConvertPressureToAngle(float pressure)
     {
         return (float) (pressure - minPressure) / (maxPressure - minPressure) * (maxAngle - minAngle) + minAngle; 
     }
 
-    private int ConvertAngleToPressure(float angle)
+    private float ConvertAngleToPressure(float angle)
     {
         return Convert.ToInt32((angle - minAngle) / (maxAngle - minAngle) * (maxPressure - minPressure) + minPressure);
     }
@@ -56,12 +64,10 @@ public class PMeterArrowRotation : MonoBehaviour
         if (currentAngle > targetAngle)
         {
             currentAngle -= Time.deltaTime * arrowAcceleration;
-            //currentAngle = Math.Clamp(currentAngle, targetAngle, maxAngle);
         }
         else
         {
             currentAngle += Time.deltaTime * arrowAcceleration;
-            //currentAngle = Math.Clamp(currentAngle, minAngle, targetAngle);
         }
         currentPressure = ConvertAngleToPressure(currentAngle);
 
