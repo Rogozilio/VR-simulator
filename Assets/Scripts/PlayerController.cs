@@ -9,16 +9,15 @@ public class PlayerController : MonoBehaviour
     public SteamVR_Action_Vector2 input;
     public float speed = 1;
     private CharacterController characterController;
-    public GameObject scada;
-    public SteamVR_Action_Boolean y_button;
+    //public GameObject scada;
+    //public SteamVR_Action_Boolean y_button;
     public SteamVR_Input_Sources inputSource = SteamVR_Input_Sources.Any;
-    private bool y_btn;
+    //private bool y_btn;
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
-        y_btn = false;
-
+        //y_btn = false;
     }
 
     // Update is called once per frame
@@ -36,14 +35,14 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Success!");
         }*/
-        bool st = y_button.GetState(SteamVR_Input_Sources.Any);
-        if (st)
-        {
-            scada.SetActive(true);
-        }
-        else
-        {
-            scada.SetActive(false);
-        }
+        //bool st = y_button.GetState(SteamVR_Input_Sources.Any);
+        //if (st)
+        //{
+        //    scada.SetActive(true);
+        //}
+        //else
+        //{
+        //    scada.SetActive(false);
+        //}
     }
 }

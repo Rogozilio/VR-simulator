@@ -34,7 +34,8 @@ public class bag : MonoBehaviour
             Debug.Log("other.tag " + other.tag);
             MapCase.transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
             oldRotation = transform.rotation;
-            MapCase.transform.rotation = Quaternion.Euler(oldRotation.x, oldRotation.y, 0);
+            //MapCase.transform.rotation = Quaternion.Euler(oldRotation.x + 180, oldRotation.y, 0);
+            //MapCase.transform.localEulerAngles = new Vector3(180, oldRotation.y, 0);
             //MapCase.transform.parent = transform;
             OnBag = true;
         }

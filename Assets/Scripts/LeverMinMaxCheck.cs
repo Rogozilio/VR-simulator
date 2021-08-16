@@ -8,9 +8,9 @@ public class LeverMinMaxCheck : MonoBehaviour
     public PressureStats PS;
     public PMeterArrowRotation PMeter;
 
-    private bool areValuesSet = false;
+    //private bool areValuesSet = false;
     private bool canChangePressure = true;
-    private int direction = 0;
+    //private int direction = 0;
     private float angleBoundsDelta = 5f;
     private CircularDrive cd;
 
@@ -21,7 +21,7 @@ public class LeverMinMaxCheck : MonoBehaviour
 
     void Update()
     {
-        if (!areValuesSet)
+        /*if (!areValuesSet)
         {
             if (PS.TargetPressureOUT > PS.StartPressureOUT)
             {
@@ -32,7 +32,7 @@ public class LeverMinMaxCheck : MonoBehaviour
                 direction = -1;
             }
             areValuesSet = true;
-        }
+        }*/
 
         if ((cd.outAngle < cd.minAngle) || (cd.outAngle > cd.maxAngle))
         {
@@ -42,30 +42,38 @@ public class LeverMinMaxCheck : MonoBehaviour
         {
             if (cd.outAngle <= cd.minAngle + angleBoundsDelta)
             {
-                canChangePressure = true;
+                if (canChangePressure)
+                {
+                    PMeter.TargetPressure = PMeter.TargetPressure - 1f;
+                }
+                canChangePressure = false;
             }
             else if (cd.outAngle >= cd.maxAngle - angleBoundsDelta)
             {
                 if (canChangePressure)
                 {
-                    PMeter.TargetPressure = PMeter.TargetPressure + 1f * direction;
+                    PMeter.TargetPressure = PMeter.TargetPressure + 1f;
                 }
                 canChangePressure = false;
+            }
+            else if ((cd.outAngle >= (cd.maxAngle + cd.minAngle) / 2f - angleBoundsDelta) && (cd.outAngle <= (cd.maxAngle + cd.minAngle) / 2f + angleBoundsDelta))
+            {
+                canChangePressure = true;
             }
         }
     }
 
     public void OnMinAngle()
     {
-        canChangePressure = true;
+        //canChangePressure = true;
     }
 
     public void OnMaxAngle()
     {
-        if (canChangePressure)
-        {
-            PMeter.TargetPressure = PMeter.TargetPressure + 1f * direction;
-        }
-        canChangePressure = false;
+        //if (canChangePressure)
+        //{
+        //    PMeter.TargetPressure = PMeter.TargetPressure + 1f * direction;
+        //}
+        //canChangePressure = false;
     }
 }

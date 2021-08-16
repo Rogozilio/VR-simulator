@@ -7,17 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuControlller : MonoBehaviour
 {
+    public GameObject Player;
     public GameObject mainButtons;
     public GameObject settingsObjects;
 
     public void LoadGameSceneExam()
     {
-        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+        Player.transform.position = new Vector3(10, 0, -8);
+        //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
 
     public void LoadGameSceneTraining()
     {
-        SceneManager.LoadScene("TestingTeleportation", LoadSceneMode.Single);
+        //SceneManager.LoadScene("TestingTeleportation", LoadSceneMode.Single);
     }
 
     public void Quit()

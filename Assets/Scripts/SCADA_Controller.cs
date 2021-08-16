@@ -9,6 +9,7 @@ using System;
 
 public class SCADA_Controller : MonoBehaviour
 {
+    public PressureStats PS;
     public bool onHand = false;
     private Quaternion oldRotation;
 
@@ -18,6 +19,7 @@ public class SCADA_Controller : MonoBehaviour
     //public GameObject player;
     public GameObject InNumber;
     public GameObject OutNumber;
+    public GameObject ReqField;
 
     public GameObject Bag;
     public bag bag;
@@ -91,12 +93,25 @@ public class SCADA_Controller : MonoBehaviour
         OutNumber.GetComponent<Text>().text = (Int32.Parse(OutNumber.GetComponent<Text>().text) - 1).ToString();
     }
 
+    public void Transfer()
+    {
+        if ((Single.Parse(InNumber.GetComponent<Text>().text) == PS.StartPressureIN) &&
+            (Single.Parse(OutNumber.GetComponent<Text>().text) == PS.StartPressureOUT))
+        {
+            ReqField.GetComponent<Text>().text = PS.TargetPressureOUT.ToString();
+        }
+        else
+        {
+            ReqField.GetComponent<Text>().text = "Показания не соответсвуют ГОСТу";
+        }
+    }
+
     void Update()
     {
         if (bag.OnBag)
         {
             transform.position = Bag.transform.position;
-            transform.eulerAngles = new Vector3(Bag.transform.eulerAngles.x, Bag.transform.eulerAngles.y - 90, Bag.transform.eulerAngles.z); ;
+            transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y - 90, Bag.transform.localEulerAngles.z);
         }
     }
 }
