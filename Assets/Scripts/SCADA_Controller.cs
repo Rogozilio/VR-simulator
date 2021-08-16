@@ -9,6 +9,9 @@ using System;
 
 public class SCADA_Controller : MonoBehaviour
 {
+    private bool pressuresTransferredCorrectly = false;
+    public bool PressuresTransferredCorrectly { get { return pressuresTransferredCorrectly; } }
+
     public PressureStats PS;
     public bool onHand = false;
     private Quaternion oldRotation;
@@ -99,9 +102,11 @@ public class SCADA_Controller : MonoBehaviour
             (Single.Parse(OutNumber.GetComponent<Text>().text) == PS.StartPressureOUT))
         {
             ReqField.GetComponent<Text>().text = PS.TargetPressureOUT.ToString();
+            pressuresTransferredCorrectly = true;
         }
         else
         {
+            pressuresTransferredCorrectly = false;
             ReqField.GetComponent<Text>().text = "Показания не соответсвуют ГОСТу";
         }
     }
