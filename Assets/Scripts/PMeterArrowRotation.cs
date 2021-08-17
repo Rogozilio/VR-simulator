@@ -5,6 +5,9 @@ using System;
 
 public class PMeterArrowRotation : MonoBehaviour
 {
+    private float canGoFurther = 0f;
+    public float CanGoFurther { get { return canGoFurther; } }
+
     public PressureStats PS;
     public bool isOUT;
 
@@ -17,6 +20,8 @@ public class PMeterArrowRotation : MonoBehaviour
     [SerializeField]
     private float targetPressure = 0f;
     public float TargetPressure { get { return targetPressure; } set { targetPressure = value; } }
+
+    private float finalTargetPressure = 0f;
 
     public float arrowAcceleration = 256f;
 
@@ -37,6 +42,7 @@ public class PMeterArrowRotation : MonoBehaviour
             if (isOUT)
             {
                 targetPressure = PS.StartPressureOUT;
+                finalTargetPressure = PS.TargetPressureOUT;
             }
             else
             {
@@ -46,6 +52,7 @@ public class PMeterArrowRotation : MonoBehaviour
         }
 
         UpdateAngleAndPressure();
+        CheckPressure();
     }
 
     private float ConvertPressureToAngle(float pressure)
@@ -67,7 +74,7 @@ public class PMeterArrowRotation : MonoBehaviour
         }
         else
         {
-            currentAngle += Time.deltaTime * arrowAcceleration;
+            currentAngle += Time.deltaTime * arrowAcceleration / 10f;
         }
         currentPressure = ConvertAngleToPressure(currentAngle);
 
@@ -77,5 +84,30 @@ public class PMeterArrowRotation : MonoBehaviour
     private void SetArrowAngle()
     {
         transform.localEulerAngles = new Vector3(0, 0, -currentAngle);
+    }
+
+    private void CheckPressure()
+    {
+        float deltaP = 0.2f;
+        if ((currentPressure >= finalTargetPressure - deltaP) && (currentPressure <= finalTargetPressure + deltaP))
+        {
+            canGoFurther = 1f;
+            Debug.Log("Ура! Всё работает!");
+        }
+        else
+        {
+            canGoFurther = 0f;
+            Debug.Log("Не всё работает, но это нормально");
+        }
+    }
+
+    public void DoNothing()
+    {
+        Debug.Log("Подошли к Pressure");
+    }
+
+    public void DoEverything()
+    {
+        Debug.Log("Game Over");
     }
 }

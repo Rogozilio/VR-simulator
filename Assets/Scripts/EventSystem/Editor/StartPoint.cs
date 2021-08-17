@@ -8,7 +8,6 @@ using UnityEngine;
 public class StartPoint
 {
     public Rect Box;
-    private Color _color;
     private Edge _edge;
     private bool _isUse;
     private int _number;
@@ -24,10 +23,9 @@ public class StartPoint
         set => _isUse = value;
     }
 
-    public StartPoint(NodeEvent node, Rect box, Color color, int number)
+    public StartPoint(NodeEvent node, Rect box, int number)
     {
         Box = box;
-        _color = color;
         _isUse = false;
         _node = node;
         _number = number;
@@ -60,13 +58,11 @@ public class StartPoint
         }
     }
 
-    public void Show()
+    public void Show(Texture2D texture)
     {
-        GUI.color = _color;
-        GUI.Box(Box, "");
-        if (_edge != null)
-        {
-            _edge.Show();
-        }
+        GUIStyle style = new GUIStyle();
+        style.normal.background = texture;
+        GUI.Box(Box,  "",style);
+        _edge?.Show();
     }
 }

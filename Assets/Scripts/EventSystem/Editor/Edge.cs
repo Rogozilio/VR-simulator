@@ -16,7 +16,7 @@ namespace Editor
         private float _offsetX;
         private float _offsetY;
         private double _size = 1;
-        private Color _color = Color.yellow;
+        private Color _color = new Color32(1, 189, 232, 255);
 
         public void Set(Vector2 start, Vector2 end)
         {

@@ -85,7 +85,7 @@ public class Noda : UnityEditor.Editor
                     _node.NameAction[i] = "";
                 _node.SetActions(_action[_indexAction[i] - 1]);
             }
-            
+
             EditorUtility.SetDirty(_node);
             Node.AddInEditor(_node);
         }
@@ -170,66 +170,65 @@ public class Noda : UnityEditor.Editor
             _indexScript =
                 EditorGUILayout.Popup(_indexScript, _optionsScript);
             GUILayout.EndHorizontal();
-            ShowProperty();
-            ShowAction();
+            if (_indexScript != 0)
+            {
+                ShowProperty();
+                ShowAction();
+            }
         }
     }
 
     private void ShowProperty()
     {
         GUILayoutOption[] options = {GUILayout.MaxWidth(100f)};
-
-        if (_indexScript != 0)
+        GUILayout.Space(20);
+        EditorGUI.indentLevel++;
+        GUILayout.Label("CONDITIONS: ");
+        _node.NameScript = _scripts[_indexScript - 1].GetType().Name;
+        for (int i = 0; i < _node.Conditions.Count; i++)
         {
-            GUILayout.Space(20);
-            EditorGUI.indentLevel++;
-            GUILayout.Label("CONDITIONS: ");
-            _node.NameScript = _scripts[_indexScript - 1].GetType().Name;
-            for (int i = 0; i < _node.Conditions.Count; i++)
+            GUILayout.BeginHorizontal();
+
+            SetProperty();
+
+            _indexProperty[i] =
+                EditorGUILayout.Popup(_indexProperty[i], _optionsProperty, options);
+            _node.Conditions[i].Value.NameProperty = _node.NameProperty[i];
+            _node.Conditions[i].Value.Opertor
+                = (Operator) EditorGUILayout.EnumPopup(_node.Conditions[i].Value.Opertor,
+                    options);
+            _node.Conditions[i].Value.Value
+                = EditorGUILayout.FloatField(_node.Conditions[i].Value.Value, options);
+            if (GUILayout.Button("X", GUILayout.Width(20)))
             {
-                GUILayout.BeginHorizontal();
-
-                SetProperty();
-
-                _indexProperty[i] =
-                    EditorGUILayout.Popup(_indexProperty[i], _optionsProperty, options);
-                _node.Conditions[i].Value.NameProperty = _node.NameProperty[i];
-                _node.Conditions[i].Value.Opertor
-                    = (Operator) EditorGUILayout.EnumPopup(_node.Conditions[i].Value.Opertor,
-                        options);
-                _node.Conditions[i].Value.Value
-                    = EditorGUILayout.FloatField(_node.Conditions[i].Value.Value, options);
-                if (GUILayout.Button("X", GUILayout.Width(20)))
-                {
-                    _node.Conditions.RemoveAt(i);
-                    _indexProperty.RemoveAt(i);
-                    _node.NameProperty.RemoveAt(i);
-                }
-
-                if (i < _node.Conditions.Count - 1)
-                {
-                    GUILayout.Box("", GUILayout.Width(40f));
-                }
-                else if (GUILayout.Button("Add", GUILayout.Width(40)))
-                {
-                    _node.SetCondition(_node.NameProperty.ToString(), Operator.Equally, 1);
-                    _node.NameProperty.Add("");
-                    _indexProperty.Add(0);
-                }
-
-                GUILayout.EndHorizontal();
+                _node.Conditions.RemoveAt(i);
+                _indexProperty.RemoveAt(i);
+                _node.NameProperty.RemoveAt(i);
             }
 
-            if (_node.Conditions.Count == 0 &&
-                GUILayout.Button("Add condition"))
+            if (i < _node.Conditions.Count - 1)
+            {
+                GUILayout.Box("", GUILayout.Width(40f));
+            }
+            else if (GUILayout.Button("Add", GUILayout.Width(40)))
             {
                 _node.SetCondition(_node.NameProperty.ToString(), Operator.Equally, 1);
                 _node.NameProperty.Add("");
                 _indexProperty.Add(0);
             }
 
-            EditorGUI.indentLevel--;
+            GUILayout.EndHorizontal();
         }
+
+        if (_node.Conditions.Count == 0 &&
+            GUILayout.Button("Add condition"))
+        {
+            _node.SetCondition(_node.NameProperty.ToString(), Operator.Equally, 1);
+            _node.NameProperty.Add("");
+            _indexProperty.Add(0);
+        }
+
+        EditorGUI.indentLevel--;
     }
 
     private void ShowAction()
