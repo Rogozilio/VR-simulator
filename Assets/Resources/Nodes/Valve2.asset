@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: New Node
+  m_Name: Valve2
   m_EditorClassIdentifier: 
-  _nameGameObject: ArrowIN
-  _nameScript: PMeterArrowRotation
+  _nameGameObject: Valve (2)
+  _nameScript: ValveMinMaxAngleCheck
   _nameProperty:
-  - GetCurrentPressure
-  _nameAction: []
-  Name: Valve
-  IsUse: 0
-  Number: 0
+  - IsClosed
+  _nameAction:
+  - DoNothing
+  Name: Valve2
+  IsUse: 1
+  Number: 3
   Conditions:
   - Value:
-      NameProperty: GetCurrentPressure
-      Opertor: 3
-      Value: 100
+      NameProperty: IsClosed
+      Opertor: 2
+      Value: 1

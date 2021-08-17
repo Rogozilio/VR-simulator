@@ -10,14 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: asd
+  m_Name: Valve1
   m_EditorClassIdentifier: 
-  _nameGameObject: ArrowIN
-  _nameScript: PMeterArrowRotation
-  _nameProperty: []
+  _nameGameObject: Valve (1)
+  _nameScript: ValveMinMaxAngleCheck
+  _nameProperty:
+  - IsOpen
   _nameAction:
-  - Result
-  Name: ' result'
+  - DoNothing
+  Name: Valve1
   IsUse: 1
-  Number: 1
-  Conditions: []
+  Number: 2
+  Conditions:
+  - Value:
+      NameProperty: IsOpen
+      Opertor: 2
+      Value: 1

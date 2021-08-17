@@ -9,7 +9,11 @@ using System;
 
 public class SCADA_Controller : MonoBehaviour
 {
+    private float pressuresTransferredCorrectly = 0f;
+    public float PressuresTransferredCorrectly { get { return pressuresTransferredCorrectly; } }
+
     public PressureStats PS;
+    public PMeterArrowRotation AR;
     public bool onHand = false;
     private Quaternion oldRotation;
 
@@ -99,9 +103,11 @@ public class SCADA_Controller : MonoBehaviour
             (Single.Parse(OutNumber.GetComponent<Text>().text) == PS.StartPressureOUT))
         {
             ReqField.GetComponent<Text>().text = PS.TargetPressureOUT.ToString();
+            pressuresTransferredCorrectly = 1f;
         }
         else
         {
+            pressuresTransferredCorrectly = 0f;
             ReqField.GetComponent<Text>().text = "Показания не соответсвуют ГОСТу";
         }
     }
@@ -111,7 +117,12 @@ public class SCADA_Controller : MonoBehaviour
         if (bag.OnBag)
         {
             transform.position = Bag.transform.position;
-            transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y - 90, Bag.transform.localEulerAngles.z);
+            transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y, Bag.transform.localEulerAngles.z + 90);
         }
+    }
+
+    public void DoNothing()
+    {
+        Debug.Log("Подошли к Planshet");
     }
 }

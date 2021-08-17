@@ -6,6 +6,7 @@ using UnityEditor.Graphs;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Valve.VR.InteractionSystem;
+using Cursor = UnityEngine.Cursor;
 
 namespace Editor
 {
@@ -16,10 +17,11 @@ namespace Editor
         private int[,] _linkNodes
             = new int[Node.Nodes.Count, Node.Nodes.Count];
 
-
+        
         private StartPoint _startPoint;
         private FinishPoint _finishPoint;
         private Edge _edge = new Edge();
+        private bool _isMoveAllBoxs = false;
 
         [MenuItem("Window/EventSystem")]
         public static MainWindowEventSystem OpenMainWindowEdit()
@@ -52,11 +54,14 @@ namespace Editor
                     }
                 }
             } while (isNodesNull);
-
         }
 
         private void OnGUI()
         {
+            EditorGUIUtility.AddCursorRect(
+                new Rect(0, 0, Screen.width, Screen.height),
+                (_isMoveAllBoxs) ? MouseCursor.Pan : MouseCursor.Arrow);
+
             HandleEvent(Event.current);
 
             ShowNode();
@@ -71,7 +76,7 @@ namespace Editor
             {
                 if (node != null)
                 {
-                    node.HandleEvents(e);
+                    node.HandleEvents(e, _isMoveAllBoxs);
                     switch (e.type)
                     {
                         case EventType.KeyDown:
@@ -140,6 +145,18 @@ namespace Editor
                         Debug.Log("Save");
                         SaveLoad system = new SaveLoad();
                         system.SaveData(_linkNodes);
+                    }
+
+                    if (e.keyCode == KeyCode.Space && e.isKey)
+                    {
+                        _isMoveAllBoxs = true;
+                    }
+
+                    break;
+                case EventType.KeyUp:
+                    if (e.keyCode == KeyCode.Space && e.isKey)
+                    {
+                        _isMoveAllBoxs = false;
                     }
 
                     break;

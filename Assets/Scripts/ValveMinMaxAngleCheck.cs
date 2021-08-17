@@ -5,10 +5,10 @@ using Valve.VR.InteractionSystem;
 
 public class ValveMinMaxAngleCheck : MonoBehaviour
 {
-    private bool isOpen = true;
-    public bool IsOpen { get { return isOpen; } }
-    private bool isClosed = false;
-    public bool IsClosed { get { return isClosed; } }
+    private float isOpen = 1f;
+    public float IsOpen { get { return isOpen; } }
+    private float isClosed = 0f;
+    public float IsClosed { get { return isClosed; } }
     private float angleBoundsDelta = 5f;
     private CircularDrive cd;
 
@@ -27,22 +27,27 @@ public class ValveMinMaxAngleCheck : MonoBehaviour
         {
             if (cd.outAngle <= cd.minAngle + angleBoundsDelta)
             {
-                isOpen = false;
-                isClosed = true;
+                isOpen = 0f;
+                isClosed = 1f;
             }
             else if (cd.outAngle >= cd.maxAngle - angleBoundsDelta)
             {
-                isOpen = true;
-                isClosed = false;
+                isOpen = 1f;
+                isClosed = 0f;
             }
             else
             {
-                isOpen = false;
-                isClosed = false;
+                isOpen = 0f;
+                isClosed = 0f;
             }
         }
         //Debug.Log("Angle: " + cd.outAngle);
         //Debug.Log("IsOpen: " + isOpen.ToString());
         //Debug.Log("IsClosed: " + isClosed.ToString());
+    }
+
+    public void DoNothing()
+    {
+        Debug.Log("Подошли к Valve");
     }
 }

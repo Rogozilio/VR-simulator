@@ -10,10 +10,12 @@ public class MainMenuControlller : MonoBehaviour
     public GameObject Player;
     public GameObject mainButtons;
     public GameObject settingsObjects;
+    public GameObject Bag;
 
     public void LoadGameSceneExam()
     {
         Player.transform.position = new Vector3(10, 0, -8);
+        //Bag.SetActive(true);
         //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
 

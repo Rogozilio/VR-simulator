@@ -11,7 +11,6 @@ namespace Editor
     {
         public Rect Box;
         private Color _color;
-        private Edge _edge;
         private bool _isUse;
         private NodeEvent _node;
 
@@ -24,7 +23,7 @@ namespace Editor
                 _isUse = value;
                 if (_isUse)
                 {
-                    _color = Color.yellow;
+                    _color = new Color32(1, 189, 232, 255);;
                 }
                 else
                 {
@@ -33,18 +32,19 @@ namespace Editor
             }
         }
 
-        public FinishPoint(Rect box, Color color, NodeEvent node)
+        public FinishPoint(Rect box, NodeEvent node)
         {
             Box = box;
-            _color = color;
+            _color = Color.black;
             _node = node;
         }
 
-        public void Show()
+        public void Show(Texture2D texture)
         {
             Handles.color = _color;
-            GUI.color = Color.red;
-            GUI.Box(Box, "");
+            GUIStyle style = new GUIStyle();
+            style.normal.background = texture;
+            GUI.Box(Box, "", style);
             for (int i = 1; i < 4; i++)
             {
                 Handles.DrawWireDisc(Box.center
