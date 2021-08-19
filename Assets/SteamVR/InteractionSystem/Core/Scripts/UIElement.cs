@@ -36,7 +36,7 @@ namespace Valve.VR.InteractionSystem
 			currentHand = hand;
 			InputModule.instance.HoverBegin( gameObject );
 			ControllerButtonHints.ShowButtonHint( hand, hand.uiInteractAction);
-            OnButtonClick();
+            //OnButtonClick(); //Костыль для вызывания нажатия кнопки при наведении
 
         }
 

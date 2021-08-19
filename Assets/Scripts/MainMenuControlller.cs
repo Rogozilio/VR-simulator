@@ -15,6 +15,7 @@ public class MainMenuControlller : MonoBehaviour
     public void LoadGameSceneExam()
     {
         Player.transform.position = new Vector3(10, 0, -8);
+        Debug.Log("Игрок перемещён");
         //Bag.SetActive(true);
         //SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
     }
