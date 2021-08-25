@@ -1,23 +1,18 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.Graphs;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Valve.VR.InteractionSystem;
-using Cursor = UnityEngine.Cursor;
+using Directory = UnityEngine.Windows.Directory;
+using Object = UnityEngine.Object;
 
 namespace Editor
 {
     public class MainWindowEventSystem : EditorWindow
     {
-        private NodeEvent[] _nodeEvents = new NodeEvent[Node.Nodes.Count];
+        private List<NodeEvent> _nodeEvents = new List<NodeEvent>();
 
-        private int[,] _linkNodes
-            = new int[Node.Nodes.Count, Node.Nodes.Count];
-
-        
         private StartPoint _startPoint;
         private FinishPoint _finishPoint;
         private Edge _edge = new Edge();
@@ -54,6 +49,27 @@ namespace Editor
                     }
                 }
             } while (isNodesNull);
+
+            // Node[] newNodes = MyAssetBundle.Load("nodes");
+            // string[] assetNames = AssetDatabase.FindAssets("", new[] { "Assets/Nodes" });
+            //
+            // foreach (string SOName in assetNames)
+            // {
+            //     var SOpath    = AssetDatabase.GUIDToAssetPath(SOName);
+            //     Node node = AssetDatabase.LoadAssetAtPath<Node>(SOpath);
+            //     Node.AddInEditor(node);
+            // }
+            // if (newNodes != null)
+            // {
+            //     foreach (var node in newNodes)
+            //     {
+            //         OnAddNode(Node.Nodes[node.Number], node.EditorPosition);
+            //     }
+            // }
+            // else
+            // {
+            //     throw new Exception("Nodes empty or not found");
+            // }
         }
 
         private void OnGUI()
@@ -83,20 +99,8 @@ namespace Editor
                             if (e.keyCode == KeyCode.Delete
                                 && node.Box.Contains(e.mousePosition))
                             {
-                                int value = Node.Nodes
-                                    .FirstOrDefault(x => x.Value == node.Data).Key;
                                 node.Delete();
-                                _nodeEvents[value] = null;
-                                foreach (int index in Node.Nodes.Keys)
-                                {
-                                    if (_linkNodes[value, index] > 0)
-                                    {
-                                        _nodeEvents[index].Finish.IsUse = false;
-                                    }
-
-                                    _linkNodes[index, value] = 0;
-                                    _linkNodes[value, index] = 0;
-                                }
+                                _nodeEvents.Remove(node);
 
                                 return;
                             }
@@ -120,7 +124,6 @@ namespace Editor
                                 && _startPoint != null && _startPoint.Node != node)
                             {
                                 _finishPoint = node.Finish;
-                                node.Finish.IsUse = true;
                                 AddLinkNode(_startPoint, _finishPoint);
                                 _startPoint = null;
                             }
@@ -142,9 +145,8 @@ namespace Editor
                 case EventType.KeyDown:
                     if (e.control && e.keyCode == KeyCode.S)
                     {
+                        MyAssetBundle.Save();
                         Debug.Log("Save");
-                        SaveLoad system = new SaveLoad();
-                        system.SaveData(_linkNodes);
                     }
 
                     if (e.keyCode == KeyCode.Space && e.isKey)
@@ -186,9 +188,11 @@ namespace Editor
         private void OnAddNode(Node node, Vector2 mousePosition)
         {
             node.IsUse = true;
+            node.EditorPosition = mousePosition;
             NodeEvent nodeEvent = new NodeEvent(node, mousePosition);
-            _nodeEvents[Node.Nodes.FirstOrDefault(x
-                => x.Value == nodeEvent.Data).Key] = nodeEvent;
+            // int index = Node.Nodes.FirstOrDefault(x
+            //     => x.Value == nodeEvent.Data).Key;
+            _nodeEvents.Add(nodeEvent);
         }
 
         private void ShowNode()
@@ -201,23 +205,22 @@ namespace Editor
 
         private void AddLinkNode(StartPoint start, FinishPoint finish)
         {
-            int i = Node.Nodes.FirstOrDefault(x => x.Value == start.Node.Data).Key;
-            int j = Node.Nodes.FirstOrDefault(x => x.Value == finish.Node.Data).Key;
-
-            _linkNodes[i, j] = start.Number;
+            start.Node.Data.NextNode[start.Number - 1] = finish.Node.Data;
+            if (finish.Node.Data.PrevNode != null &&
+                !finish.Node.Data.PrevNode.Contains(start.Node.Data))
+                finish.Node.Data.PrevNode.Add(start.Node.Data);
         }
 
         private void ShowEdge()
         {
-            for (int i = 0; i < _linkNodes.GetLength(0); i++)
+            foreach (var node in _nodeEvents)
             {
-                for (int j = 0; j < _linkNodes.GetLength(1); j++)
+                for (int i = 0; i < node?.Data.NextNode.Length; i++)
                 {
-                    if (_linkNodes[i, j] > 0)
+                    if (node.Data.NextNode[i] != null)
                     {
-                        _edge.Set(_nodeEvents[i].Start[_linkNodes[i, j] - 1].Box.center
-                            , _nodeEvents[j].Finish.Box.center);
-                        _nodeEvents[j].Finish.IsUse = true;
+                        _edge.Set(node.Start[i].Box.center
+                            , _nodeEvents[node.Data.NextNode[i].Number].Finish.Box.center);
                         _edge.Show();
                     }
                 }

@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1826538449
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 95c780b54f9d092eb9c1c10e84a82139
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7f6de2e8db138c6bb0f8ba43128491b6
+HashAppended: 0
+ClassTypes:
+- Class: 114
+  Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Nodes/Button.asset
+- Assets/Nodes/Door.asset
+Dependencies: []

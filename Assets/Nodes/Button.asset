@@ -7,32 +7,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: New Node
+  m_Name: Button
   m_EditorClassIdentifier: 
   _nameGameObject: Buttone
   _nameScript: Button
   _nameProperty:
   - Buttone
-  - Buttone
-  - Buttone
-  _nameAction:
-  - Hello
+  _nameAction: []
   Name: Button
-  IsUse: 0
-  Number: 1
+  IsUse: 1
+  NextNode:
+  - {fileID: 11400000, guid: b654f558a433caf478a5492124a63cf0, type: 2}
+  PrevNode: []
+  Number: 0
+  EditorPosition: {x: 130, y: 156}
   Conditions:
   - Value:
       NameProperty: Buttone
       Opertor: 2
-      Value: 1
-  - Value:
-      NameProperty: Buttone
-      Opertor: 1
-      Value: 5
-  - Value:
-      NameProperty: Buttone
-      Opertor: 0
       Value: 1

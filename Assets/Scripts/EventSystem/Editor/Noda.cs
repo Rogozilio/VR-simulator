@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using NUnit.Framework.Internal;
@@ -33,7 +34,7 @@ public class Noda : UnityEditor.Editor
     private void OnEnable()
     {
         _node = target as Node;
-
+        _node.Name = _node.name;
         SetGameObjects();
         if (!string.IsNullOrEmpty(_node.NameGameObject))
         {
@@ -69,6 +70,15 @@ public class Noda : UnityEditor.Editor
         GUILayout.Space(20);
         if (GUILayout.Button("Save", GUILayout.Height(30f)))
         {
+            string path = AssetDatabase.GetAssetPath(_node);
+            var importer = AssetImporter.GetAtPath(path);
+            importer.assetBundleName = "nodes";
+
+            if (_node.Conditions.Count == 0)
+                _node.NextNode = new Node[] {null};
+            else
+                _node.NextNode = new Node[_node.Conditions.Count];
+
             for (int i = 0; i < _node.Conditions.Count; i++)
             {
                 if (_indexProperty[i] > 0)
@@ -177,7 +187,6 @@ public class Noda : UnityEditor.Editor
             }
         }
     }
-
     private void ShowProperty()
     {
         GUILayoutOption[] options = {GUILayout.MaxWidth(100f)};

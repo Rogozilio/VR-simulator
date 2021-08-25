@@ -16,16 +16,14 @@
               <e p="Edge.cs" t="Include" />
               <e p="FinishPoint.cs" t="Include" />
               <e p="MainWindowEventSystem.cs" t="Include" />
+              <e p="MyAssetBundle.cs" t="Include" />
               <e p="Noda.cs" t="Include" />
               <e p="NodeEvent.cs" t="Include" />
               <e p="StartPoint.cs" t="Include" />
             </e>
             <e p="EventSystem.cs" t="Include" />
-            <e p="Interfaces" t="Include">
-              <e p="ISaveLoad.cs" t="Include" />
-            </e>
+            <e p="MyAssetBundle.cs" t="Include" />
             <e p="Node.cs" t="Include" />
-            <e p="SaveLoad.cs" t="Include" />
           </e>
         </e>
         <e p="SteamVR" t="Include">
