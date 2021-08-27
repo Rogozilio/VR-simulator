@@ -50,26 +50,37 @@ namespace Editor
                 }
             } while (isNodesNull);
 
-            // Node[] newNodes = MyAssetBundle.Load("nodes");
-            // string[] assetNames = AssetDatabase.FindAssets("", new[] { "Assets/Nodes" });
-            //
-            // foreach (string SOName in assetNames)
-            // {
-            //     var SOpath    = AssetDatabase.GUIDToAssetPath(SOName);
-            //     Node node = AssetDatabase.LoadAssetAtPath<Node>(SOpath);
-            //     Node.AddInEditor(node);
-            // }
-            // if (newNodes != null)
-            // {
-            //     foreach (var node in newNodes)
-            //     {
-            //         OnAddNode(Node.Nodes[node.Number], node.EditorPosition);
-            //     }
-            // }
-            // else
-            // {
-            //     throw new Exception("Nodes empty or not found");
-            // }
+            Node[] newNodes = MyAssetBundle.Load("nodes");
+            if (newNodes != null)
+            {
+                string[] assetNames = AssetDatabase.FindAssets("", new[] {"Assets/Nodes"});
+
+                foreach (string SOName in assetNames)
+                {
+                    var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
+                    Node node = AssetDatabase.LoadAssetAtPath<Node>(SOpath);
+                    foreach (var newNode in newNodes)
+                    {
+                        if (newNode.Number == node.Number)
+                        {
+                            node.NextNode = newNode.NextNode;
+                            node.PrevNode = newNode.PrevNode;
+                        }
+                    }
+
+                    EditorUtility.SetDirty(node);
+                    Node.AddInEditor(node);
+                }
+
+                foreach (var node in newNodes)
+                {
+                    OnAddNode(Node.Nodes[node.Number], node.EditorPosition);
+                }
+            }
+            else
+            {
+                throw new Exception("Nodes empty or not found");
+            }
         }
 
         private void OnGUI()
@@ -145,6 +156,11 @@ namespace Editor
                 case EventType.KeyDown:
                     if (e.control && e.keyCode == KeyCode.S)
                     {
+                        foreach (var node in Node.Nodes)
+                        {
+                            EditorUtility.SetDirty(node.Value);
+                        }
+
                         MyAssetBundle.Save();
                         Debug.Log("Save");
                     }
@@ -190,8 +206,6 @@ namespace Editor
             node.IsUse = true;
             node.EditorPosition = mousePosition;
             NodeEvent nodeEvent = new NodeEvent(node, mousePosition);
-            // int index = Node.Nodes.FirstOrDefault(x
-            //     => x.Value == nodeEvent.Data).Key;
             _nodeEvents.Add(nodeEvent);
         }
 
@@ -205,10 +219,10 @@ namespace Editor
 
         private void AddLinkNode(StartPoint start, FinishPoint finish)
         {
-            start.Node.Data.NextNode[start.Number - 1] = finish.Node.Data;
+            start.Node.Data.NextNode[start.Number - 1] = finish.Node.Data.Number;
             if (finish.Node.Data.PrevNode != null &&
-                !finish.Node.Data.PrevNode.Contains(start.Node.Data))
-                finish.Node.Data.PrevNode.Add(start.Node.Data);
+                !finish.Node.Data.PrevNode.Contains(start.Node.Data.Number))
+                finish.Node.Data.PrevNode.Add(start.Node.Data.Number);
         }
 
         private void ShowEdge()
@@ -219,9 +233,18 @@ namespace Editor
                 {
                     if (node.Data.NextNode[i] != null)
                     {
-                        _edge.Set(node.Start[i].Box.center
-                            , _nodeEvents[node.Data.NextNode[i].Number].Finish.Box.center);
-                        _edge.Show();
+                        Vector2 start = node.Start[i].Box.center;
+                        foreach (var node2 in _nodeEvents)
+                        {
+                            if (node2.Data.Number == node.Data.NextNode[i])
+                            {
+                                Vector2 finish = _nodeEvents.First
+                                    (x => x.Data.Number == node2.Data.Number).Finish.Box.center;
+                                _edge.Set(start, finish);
+                                _edge.Show();
+                                break;
+                            }
+                        }
                     }
                 }
             }

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Graphs;
 using UnityEngine;
@@ -34,7 +35,8 @@ namespace Editor
                     , Vector3.forward, i, 2);
             }
 
-            if (_node.Data.PrevNode.Count > 0)
+            //if (_node.Data.PrevNode.Count > 0)
+            if (_node.Data.PrevNode.FirstOrDefault(x => x > 0) > 0)
             {
                 _color = new Color32(1, 189, 232, 255);;
             }

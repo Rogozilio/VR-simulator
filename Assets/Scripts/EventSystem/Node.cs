@@ -36,11 +36,11 @@ public class Node : ScriptableObject
     [HideInInspector]
     public bool IsUse = false;
 
-    [HideInInspector]
-    public Node[] NextNode;
+    [HideInInspector, SerializeField]
+    public int[] NextNode;
 
     [HideInInspector]
-    public List<Node> PrevNode = new List<Node>();
+    public List<int> PrevNode = new List<int>();
 
     private int _numberActiveCondition = 0;
 
@@ -81,7 +81,7 @@ public class Node : ScriptableObject
         get => _numberActiveCondition;
         set => _numberActiveCondition = value;
     }
-    
+
     private void Awake()
     {
         AddInEditor(this);
@@ -171,7 +171,8 @@ public class Node : ScriptableObject
                 return;
             }
         }
-        newNode.Number = Nodes.Count;
+
+        newNode.Number = Nodes.Count + 1;
         Nodes.Add(newNode.Number, newNode);
     }
 
@@ -249,9 +250,7 @@ public class Node : ScriptableObject
 
             return isActionSet;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 }

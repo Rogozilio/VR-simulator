@@ -21,20 +21,29 @@ public class EventSystem : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
-        foreach (var node in _activeNodes)
+        foreach (var nodeActive in _activeNodes)
         {
-            if (node != null)
+            if (nodeActive != null)
             {
-                node.Launch();
-                StartActions(node);
+                nodeActive.Launch();
+                StartActions(nodeActive);
 
-                if (node.NumberActiveCondition > 0)
+                if (nodeActive.NumberActiveCondition > 0)
                 {
-                    _activeNodes.Add(node.NextNode[node.NumberActiveCondition - 1]);
-                    node.NumberActiveCondition = 0;
-                    _activeNodes.Remove(node);
+                    foreach (var node in _allNodes)
+                    {
+                        if (node.Number ==
+                            nodeActive.NextNode[nodeActive.NumberActiveCondition - 1])
+                        {
+                            _activeNodes.Add(node);
+                            break;
+                        }
+                    }
+
+                    nodeActive.NumberActiveCondition = 0;
+                    _activeNodes.Remove(nodeActive);
                     return;
                 }
             }

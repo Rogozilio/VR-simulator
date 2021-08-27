@@ -187,13 +187,13 @@ namespace Editor
 
             _finishEdge = new FinishPoint(_boxFinish, this);
 
-            _boxAction = new Rect[_data.GetActions().Count];
-            _textAction = new string[_data.GetActions().Count];
+            _boxAction = new Rect[_data.NameAction.Count];
+            _textAction = new string[_data.NameAction.Count];
 
-            for (int i = 0; i < _data.GetActions().Count; i++)
+            for (int i = 0; i < _data.NameAction.Count; i++)
             {
                 InitBoxAction(position + new Vector2(0, _boxName.height + _boxFinish.height), i);
-                _textAction[i] = _data.GetActions()[i].Method.Name;
+                _textAction[i] = _data.NameAction[i];
             }
         }
 
@@ -289,28 +289,36 @@ namespace Editor
                 if (node == _data)
                 {
                     node.IsUse = false;
-                    foreach (var prevNode in node.PrevNode)
+                    
+                    foreach (var key in node.PrevNode)
                     {
-                        for (int i = 0; i < prevNode.NextNode.Length; i++)
+                        for(int i = 0; i < Node.Nodes[key].NextNode.Length;i++)
                         {
-                            if (prevNode.NextNode[i] == node)
+                            if (Node.Nodes[key].NextNode[i] == node.Number)
                             {
-                                prevNode.NextNode[i] = null;
+                                Node.Nodes[key].NextNode[i] = 0;
                             }
                         }
                     }
-
-                    foreach (var nextNode in node.NextNode)
+                    
+                    foreach (var key in node.NextNode)
                     {
-                        if (nextNode != null)
+                        if (key > 0)
                         {
-                            nextNode.PrevNode.Remove(node);
+                            foreach (var keyPrev in Node.Nodes[key].PrevNode)
+                            {
+                                if (keyPrev == node.Number)
+                                {
+                                    Node.Nodes[key].PrevNode.Remove(keyPrev);
+                                    break;
+                                }
+                            }  
                         }
                     }
                     node.PrevNode.Clear();
                     for (int i = 0; i < node.NextNode.Length; i++)
                     {
-                        node.NextNode[i] = null;
+                        node.NextNode[i] = 0;
                     }
                         
                 }
