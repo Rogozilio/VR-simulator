@@ -31,6 +31,7 @@ public class Node : ScriptableObject
     [SerializeField, HideInInspector]
     private List<string> _nameAction = new List<string>();
 
+    [HideInInspector]
     public string Name = "Name";
 
     [HideInInspector]
@@ -116,18 +117,18 @@ public class Node : ScriptableObject
         _actionCorutin += action;
     }
 
-    public void SetActions(MethodInfo method)
+    public void SetActions(MethodInfo method, object obj = null)
     {
         Type type = method.ReturnType;
         if (type == typeof(void))
         {
             SetAction((DelegateActionVoid) Delegate.CreateDelegate(
-                typeof(DelegateActionVoid), null, method));
+                typeof(DelegateActionVoid), obj, method));
         }
         else if (type == typeof(IEnumerator))
         {
             SetAction((DelegateActionCorutin) Delegate.CreateDelegate(
-                typeof(DelegateActionCorutin), null, method));
+                typeof(DelegateActionCorutin), obj, method));
         }
     }
 
@@ -230,9 +231,8 @@ public class Node : ScriptableObject
         {
             bool isActionSet = false;
             Type typeComponent = Type.GetType(_nameScript);
-            MethodInfo[] methods = GameObject.Find(_nameGameObject).GetComponent(typeComponent)
-                .GetType()
-                .GetMethods();
+            Component script = GameObject.Find(_nameGameObject).GetComponent(typeComponent);
+            MethodInfo[] methods = script.GetType().GetMethods();
 
             foreach (var nameAction in _nameAction)
             {
@@ -241,7 +241,7 @@ public class Node : ScriptableObject
                     if (method.Name == nameAction
                         && method.ReturnType == action.Method.ReturnType)
                     {
-                        SetActions(method);
+                        SetActions(method, script);
                         isActionSet = true;
                         break;
                     }

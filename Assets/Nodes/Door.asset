@@ -18,9 +18,9 @@ MonoBehaviour:
   _nameAction:
   - OpenDoor
   Name: Door
-  IsUse: 0
+  IsUse: 1
   NextNode: 00000000
   PrevNode: 01000000
   Number: 2
-  EditorPosition: {x: 557, y: 109}
+  EditorPosition: {x: 524, y: 89}
   Conditions: []

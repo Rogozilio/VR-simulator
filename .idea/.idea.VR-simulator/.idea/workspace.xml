@@ -5,21 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Nodes/Button.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nodes/Button.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Nodes/Door.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nodes/Door.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MyAssetBundle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MyAssetBundle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.manifest.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.manifest.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes.manifest.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes.manifest.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/nodes.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,15 +97,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/SaveLoad.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/StartPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Edge.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Button.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/MyAssetBundle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MyAssetBundle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" />
     </changedPaths>
   </component>
@@ -142,10 +135,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="10252">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11656">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10252" />
+      <option name="pid" value="11656" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -220,7 +213,8 @@
       <workItem from="1629803319385" duration="4858000" />
       <workItem from="1629875615421" duration="28494000" />
       <workItem from="1629978797228" duration="26005000" />
-      <workItem from="1630047425489" duration="629000" />
+      <workItem from="1630047425489" duration="1231000" />
+      <workItem from="1630151208088" duration="9504000" />
     </task>
     <servers />
   </component>
@@ -259,19 +253,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs</url>
-          <line>36</line>
-          <properties documentPath="D:\unity\VR-simulator\Assets\Scripts\EventSystem\EventSystem.cs" initialLine="36" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="883" />
-            </startOffsets>
-            <endOffsets>
-              <option value="988" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

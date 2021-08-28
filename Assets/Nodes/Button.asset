@@ -18,11 +18,11 @@ MonoBehaviour:
   - Buttone
   _nameAction: []
   Name: Button
-  IsUse: 0
+  IsUse: 1
   NextNode: 02000000
   PrevNode: 
   Number: 1
-  EditorPosition: {x: 211, y: 167}
+  EditorPosition: {x: 255, y: 199}
   Conditions:
   - Value:
       NameProperty: Buttone

@@ -13,10 +13,13 @@ public class EventSystem : MonoBehaviour
 
         foreach (Node node in _allNodes)
         {
-            if (node.PrevNode.Count == 0
-                && node.NextNode.Length > 0)
+            foreach (var next in node.NextNode)
             {
-                _activeNodes.Add(node);
+                if (next > 0 && node.PrevNode.Count == 0)
+                {
+                    _activeNodes.Add(node);
+                    break;
+                }
             }
         }
     }
@@ -53,6 +56,7 @@ public class EventSystem : MonoBehaviour
     private void StartActions(Node node)
     {
         node.ActionVoid?.Invoke();
+
         Node.DelegateActionCorutin actionCorutin
             = node.ActionCorutin;
         if (actionCorutin != null)
