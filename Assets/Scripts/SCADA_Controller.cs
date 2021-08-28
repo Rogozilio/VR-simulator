@@ -13,13 +13,13 @@ public class SCADA_Controller : MonoBehaviour
     public float PressuresTransferredCorrectly { get { return pressuresTransferredCorrectly; } }
 
     public PressureStats PS;
-    public PMeterArrowRotation AR;
+    //public PMeterArrowRotation AR;
     public bool onHand = false;
     private Quaternion oldRotation;
 
     public GameObject scada_image;
     public GameObject transferObjects;
-    public GameObject settingsObjects;
+    //public GameObject settingsObjects;
     //public GameObject player;
     public GameObject InNumber;
     public GameObject OutNumber;
@@ -28,26 +28,30 @@ public class SCADA_Controller : MonoBehaviour
     public GameObject Bag;
     public bag bag;
 
+    public AudioSource _audio;
+    public AudioClip Notification1;
+    public AudioClip Notification1T;
+
     public void SetTransferObjects()
     {
         scada_image.SetActive(false);
         transferObjects.SetActive(true);
-        settingsObjects.SetActive(false);
+        //settingsObjects.SetActive(false);
     }
 
     public void SetScadaImage()
     {
         scada_image.SetActive(true);
         transferObjects.SetActive(false);
-        settingsObjects.SetActive(false);
+        //settingsObjects.SetActive(false);
     }
 
-    public void SetSettingsObjects()
+    /*public void SetSettingsObjects()
     {
         scada_image.SetActive(false);
         transferObjects.SetActive(false);
         settingsObjects.SetActive(true);
-    }
+    }*/
 
     /*private void Update()
     {
@@ -69,7 +73,7 @@ public class SCADA_Controller : MonoBehaviour
     {
         onHand = false;
         
-        GetComponent<Rigidbody>().isKinematic = true;
+        //GetComponent<Rigidbody>().isKinematic = true;
 
         //transform.position = player.transform.position + new Vector3(0, 1.0f, 0.5f);
         //transform.parent = player.transform;
@@ -117,12 +121,19 @@ public class SCADA_Controller : MonoBehaviour
         if (bag.OnBag)
         {
             transform.position = Bag.transform.position;
-            transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y, Bag.transform.localEulerAngles.z + 90);
+            transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y +180, Bag.transform.localEulerAngles.z + 90);
         }
     }
 
-    public void DoNothing()
+    /*public void VoiceDispatcher()
     {
-        Debug.Log("Подошли к Planshet");
-    }
+        if(MainMenuControlller.GameMode == 1f)
+        {
+            _audio.PlayOneShot(Notification1T);
+        }
+        else if(MainMenuControlller.GameMode == 2f)
+        {
+            _audio.PlayOneShot(Notification1);
+        }
+    }*/
 }

@@ -15,6 +15,7 @@ public class bag : MonoBehaviour
     void Start()
     {
         offset = transform.position - Camera.transform.position;
+
     }
 
     private void Awake()
@@ -27,7 +28,7 @@ public class bag : MonoBehaviour
         MapCase.GetComponent<Rigidbody>().isKinematic = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if ((other.tag == "MapCase")&&(SCADA_Controller.onHand==false))
         {
@@ -38,8 +39,23 @@ public class bag : MonoBehaviour
             //MapCase.transform.localEulerAngles = new Vector3(180, oldRotation.y, 0);
             //MapCase.transform.parent = transform;
             OnBag = true;
+        }      
+    }*/
+
+    void OnTriggerStay(Collider collisionInfo)
+    {
+        Debug.Log(collisionInfo.tag);
+        if ((collisionInfo.tag == "MapCase") && (SCADA_Controller.onHand == false))
+        {
+            Debug.Log("other.tag " + collisionInfo.tag);
+            MapCase.transform.position = new Vector3(transform.position.x, transform.position.y + 0.2f, transform.position.z);
+            oldRotation = transform.rotation;
+            MapCase.GetComponent<Rigidbody>().isKinematic = true;
+            //MapCase.transform.rotation = Quaternion.Euler(oldRotation.x + 180, oldRotation.y, 0);
+            //MapCase.transform.localEulerAngles = new Vector3(180, oldRotation.y, 0);
+            //MapCase.transform.parent = transform;
+            OnBag = true;
         }
-        
     }
 
     void Update()

@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using UnityEditor;
 using UnityEngine;
 using Component = UnityEngine.Component;
 
@@ -38,10 +36,18 @@ public class Node : ScriptableObject
     [HideInInspector]
     public bool IsUse = false;
 
-    private int _numberActiveCondition = 0;
-    
     [HideInInspector]
+    public Node[] NextNode;
+
+    [HideInInspector]
+    public List<Node> PrevNode = new List<Node>();
+
+    private int _numberActiveCondition = 0;
+
     public int Number;
+
+    [HideInInspector]
+    public Vector2 EditorPosition;
 
     [HideInInspector]
     public List<Condition> Conditions = new List<Condition>();
@@ -75,43 +81,22 @@ public class Node : ScriptableObject
         get => _numberActiveCondition;
         set => _numberActiveCondition = value;
     }
-
     
     private void Awake()
     {
-        Number = Nodes.Count;
         AddInEditor(this);
     }
 
-    public DelegateActionVoid ActionVoid
+    private void OnEnable()
     {
-        get
-        {
-            if (FindActions(_actionVoid))
-            {
-                return _actionVoid;
-            }
-            else
-            {
-                return null;
-            }
-        }
+        Name = name;
     }
 
-    public DelegateActionCorutin ActionCorutin
-    {
-        get
-        {
-            if (FindActions(_actionCorutin))
-            {
-                return _actionCorutin;
-            }
-            else
-            {
-                return null;
-            }
-        }
-    }
+    public DelegateActionVoid ActionVoid =>
+        FindActions(_actionVoid) ? _actionVoid : null;
+
+    public DelegateActionCorutin ActionCorutin =>
+        FindActions(_actionCorutin) ? _actionCorutin : null;
 
     public void SetCondition(string nameProperty, Operator op, float result = 1)
     {
@@ -176,17 +161,18 @@ public class Node : ScriptableObject
         }
     }
 
-    public static void AddInEditor(Node node)
+    public static void AddInEditor(Node newNode)
     {
-        if (Nodes.ContainsValue(node))
+        foreach (var node in Nodes)
         {
-            Nodes[Nodes.First(x
-                => x.Value == node).Key] = node;
+            if (node.Key == newNode.Number)
+            {
+                Nodes[node.Key] = newNode;
+                return;
+            }
         }
-        else
-        {
-            Nodes.Add(node.Number, node);
-        }
+        newNode.Number = Nodes.Count;
+        Nodes.Add(newNode.Number, newNode);
     }
 
     private float GetValueCondition(int numberProperty)

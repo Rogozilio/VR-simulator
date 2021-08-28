@@ -54,13 +54,18 @@ namespace Editor
             _textureBoxName = InitTextureBox((int) _boxName.width, (int) _boxName.height
                 , new Color32(0, 75, 148, 255));
             _textureBoxStart = InitTextureBox((int) _boxStart[0].width, (int) _boxStart[0].height
-                ,new Color32(160, 231, 125, 255));
-            _textureBoxCondition = InitTextureBox((int) _boxCondition[0].width, (int) _boxCondition[0].height
+                , new Color32(160, 231, 125, 255));
+            _textureBoxCondition = InitTextureBox((int) _boxCondition[0].width,
+                (int) _boxCondition[0].height
                 , new Color32(105, 137, 147, 255));
             _textureBoxFinish = InitTextureBox((int) _boxFinish.width, (int) _boxFinish.height
                 , new Color32(239, 134, 119, 255));
-            _textureBoxAction = InitTextureBox((int) _boxAction[0].width, (int) _boxAction[0].height
-                , new Color32(77, 20, 83, 255));
+            if (_boxAction.Length > 0)
+            {
+                _textureBoxAction = InitTextureBox((int) _boxAction[0].width,
+                    (int) _boxAction[0].height
+                    , new Color32(77, 20, 83, 255));
+            }
         }
 
         private Texture2D InitTextureBox(int width, int height, Color color)
@@ -91,6 +96,7 @@ namespace Editor
                     countMark = condition.Text.Length;
                 }
             }
+
             foreach (var action in _data.GetActions())
             {
                 if (action.Method.Name.Length > countMark)
@@ -100,7 +106,9 @@ namespace Editor
             }
 
             _width = (lengthMark * countMark);
+            _width = (_width < 100f) ? 100f : _width;
         }
+
         private void InitBox(Vector2 position)
         {
             InitBoxName(_data.Name, position);
@@ -161,7 +169,7 @@ namespace Editor
             _startEdge = new StartPoint[1];
             _boxStart[0] = new Rect(position,
                 new Vector2(_heightString, _heightString));
-            _startEdge[0] = new StartPoint(this, _boxStart[0], 0 + 1);
+            _startEdge[0] = new StartPoint(this, _boxStart[0], 1);
         }
 
         private void InitBoxFinish(Vector2 position)
@@ -198,6 +206,7 @@ namespace Editor
 
         private void MoveBoxes(Event e)
         {
+            _data.EditorPosition += e.delta;
             _box.position += e.delta;
             _boxName.position += e.delta;
 
@@ -259,7 +268,7 @@ namespace Editor
             _styleTexture.normal.textColor = Color.white;
             for (int i = 0; i < boxs.Length; i++)
             {
-                GUI.Box(boxs[i], (name[i] == null)? "" : name[i], _styleTexture);
+                GUI.Box(boxs[i], (name[i] == null) ? "" : name[i], _styleTexture);
             }
         }
 
@@ -278,7 +287,33 @@ namespace Editor
             foreach (var node in Node.Nodes.Values)
             {
                 if (node == _data)
+                {
                     node.IsUse = false;
+                    foreach (var prevNode in node.PrevNode)
+                    {
+                        for (int i = 0; i < prevNode.NextNode.Length; i++)
+                        {
+                            if (prevNode.NextNode[i] == node)
+                            {
+                                prevNode.NextNode[i] = null;
+                            }
+                        }
+                    }
+
+                    foreach (var nextNode in node.NextNode)
+                    {
+                        if (nextNode != null)
+                        {
+                            nextNode.PrevNode.Remove(node);
+                        }
+                    }
+                    node.PrevNode.Clear();
+                    for (int i = 0; i < node.NextNode.Length; i++)
+                    {
+                        node.NextNode[i] = null;
+                    }
+                        
+                }
             }
 
             return this;

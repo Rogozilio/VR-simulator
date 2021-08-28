@@ -11,26 +11,9 @@ namespace Editor
     {
         public Rect Box;
         private Color _color;
-        private bool _isUse;
         private NodeEvent _node;
 
         public NodeEvent Node => _node;
-        public bool IsUse
-        {
-            get => _isUse;
-            set
-            {
-                _isUse = value;
-                if (_isUse)
-                {
-                    _color = new Color32(1, 189, 232, 255);;
-                }
-                else
-                {
-                    _color = Color.black;
-                }
-            }
-        }
 
         public FinishPoint(Rect box, NodeEvent node)
         {
@@ -49,6 +32,15 @@ namespace Editor
             {
                 Handles.DrawWireDisc(Box.center
                     , Vector3.forward, i, 2);
+            }
+
+            if (_node.Data.PrevNode.Count > 0)
+            {
+                _color = new Color32(1, 189, 232, 255);;
+            }
+            else
+            {
+                _color = Color.black;
             }
         }
     }
