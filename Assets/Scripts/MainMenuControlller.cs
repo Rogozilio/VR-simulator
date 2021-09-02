@@ -38,9 +38,9 @@ public class MainMenuControlller : MonoBehaviour
     public void LoadGameSceneExam()
     {
         IsTraining = false;
-        Player.transform.position = new Vector3(10, 0, -8);
+        Player.transform.position = new Vector3(38f, 0f, -2.7f);
         Debug.Log("Игрок перемещён");
-        Notification1.Play();
+        //Notification1.Play();
         Noise.Play();
         _gameMode = 2f;
         //Bag.SetActive(true);
@@ -52,7 +52,7 @@ public class MainMenuControlller : MonoBehaviour
         IsTraining = true;
         Player.transform.position = new Vector3(10, 0, -8);
         Debug.Log("Игрок перемещён.Режим тренировки");
-        Notification1T.Play();
+        //Notification1T.Play();
         Noise.Play();
         AddOutline(Planshet);
         AddOutlineVisible(DialIN);
@@ -173,7 +173,7 @@ public class MainMenuControlller : MonoBehaviour
                 RemoveOutline(Valve3);
             }
 
-            CheckState();
+            //CheckState();
         }
     }
 }

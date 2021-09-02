@@ -17,15 +17,14 @@ MonoBehaviour:
   _nameProperty:
   - PressuresTransferredCorrectly
   _nameAction:
-  - VoiceDispatcher
+  - Transfer
+  - PlayDispatcher
   Name: Planshet
-  IsUse: 1
-  NextNode:
-  - {fileID: 11400000, guid: b2b59708a6334824cbb34151123aa602, type: 2}
-  PrevNode:
-  - {fileID: 11400000, guid: 06de68f39f268554eaafffd1d2fa546a, type: 2}
-  Number: 1
-  EditorPosition: {x: 52, y: 121}
+  IsUse: 0
+  NextNode: 03000000
+  PrevNode: 01000000
+  Number: 2
+  EditorPosition: {x: 2, y: 100}
   Conditions:
   - Value:
       NameProperty: PressuresTransferredCorrectly

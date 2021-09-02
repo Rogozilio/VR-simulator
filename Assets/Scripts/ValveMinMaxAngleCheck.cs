@@ -46,8 +46,9 @@ public class ValveMinMaxAngleCheck : MonoBehaviour
         //Debug.Log("IsClosed: " + isClosed.ToString());
     }
 
-    public void DoNothing()
+    public void PlayDispatcher()
     {
-        Debug.Log("Подошли к Valve");
+        Dispatcher dispatcher = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Dispatcher>();
+        dispatcher.Play();
     }
 }

@@ -17,15 +17,13 @@ MonoBehaviour:
   _nameProperty:
   - IsClosed
   _nameAction:
-  - DoNothing
+  - PlayDispatcher
   Name: Valve3
-  IsUse: 1
-  NextNode:
-  - {fileID: 11400000, guid: f60412550b28b9c439b9e56f9958f47c, type: 2}
-  PrevNode:
-  - {fileID: 11400000, guid: 82ce92af791700849b9e615f9a612ae2, type: 2}
-  Number: 5
-  EditorPosition: {x: 763, y: 214}
+  IsUse: 0
+  NextNode: 07000000
+  PrevNode: 05000000
+  Number: 6
+  EditorPosition: {x: 811, y: 250}
   Conditions:
   - Value:
       NameProperty: IsClosed

@@ -17,15 +17,13 @@ MonoBehaviour:
   _nameProperty:
   - IsOpen
   _nameAction:
-  - DoNothing
+  - PlayDispatcher
   Name: Valve4
-  IsUse: 1
-  NextNode:
-  - {fileID: 11400000, guid: 82ce92af791700849b9e615f9a612ae2, type: 2}
-  PrevNode:
-  - {fileID: 11400000, guid: b2b59708a6334824cbb34151123aa602, type: 2}
-  Number: 3
-  EditorPosition: {x: 518, y: 179}
+  IsUse: 0
+  NextNode: 05000000
+  PrevNode: 03000000
+  Number: 4
+  EditorPosition: {x: 528, y: 207}
   Conditions:
   - Value:
       NameProperty: IsOpen

@@ -16,7 +16,7 @@ public class MyAssetBundle
         BuildPipeline.BuildAssetBundles(assetBundleDirectory,
             BuildAssetBundleOptions.None,
             BuildTarget.StandaloneWindows64);
-        AssetDatabase.Refresh();
+        //AssetDatabase.Refresh();
     }
 
     public static Node[] Load(string nameAsset)

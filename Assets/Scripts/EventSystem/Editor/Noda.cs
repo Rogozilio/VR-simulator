@@ -75,9 +75,9 @@ public class Noda : UnityEditor.Editor
             importer.assetBundleName = "nodes";
 
             if (_node.Conditions.Count == 0)
-                _node.NextNode = new Node[] {null};
+                _node.NextNode = new[] {0};
             else
-                _node.NextNode = new Node[_node.Conditions.Count];
+                _node.NextNode = new int[_node.Conditions.Count];
 
             for (int i = 0; i < _node.Conditions.Count; i++)
             {

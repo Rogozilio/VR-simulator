@@ -31,16 +31,17 @@ public class Node : ScriptableObject
     [SerializeField, HideInInspector]
     private List<string> _nameAction = new List<string>();
 
+    [HideInInspector]
     public string Name = "Name";
 
     [HideInInspector]
     public bool IsUse = false;
 
-    [HideInInspector]
-    public Node[] NextNode;
+    [HideInInspector, SerializeField]
+    public int[] NextNode;
 
     [HideInInspector]
-    public List<Node> PrevNode = new List<Node>();
+    public List<int> PrevNode = new List<int>();
 
     private int _numberActiveCondition = 0;
 
@@ -81,7 +82,7 @@ public class Node : ScriptableObject
         get => _numberActiveCondition;
         set => _numberActiveCondition = value;
     }
-    
+
     private void Awake()
     {
         AddInEditor(this);
@@ -116,18 +117,18 @@ public class Node : ScriptableObject
         _actionCorutin += action;
     }
 
-    public void SetActions(MethodInfo method)
+    public void SetActions(MethodInfo method, object obj = null)
     {
         Type type = method.ReturnType;
         if (type == typeof(void))
         {
             SetAction((DelegateActionVoid) Delegate.CreateDelegate(
-                typeof(DelegateActionVoid), null, method));
+                typeof(DelegateActionVoid), obj, method));
         }
         else if (type == typeof(IEnumerator))
         {
             SetAction((DelegateActionCorutin) Delegate.CreateDelegate(
-                typeof(DelegateActionCorutin), null, method));
+                typeof(DelegateActionCorutin), obj, method));
         }
     }
 
@@ -171,7 +172,8 @@ public class Node : ScriptableObject
                 return;
             }
         }
-        newNode.Number = Nodes.Count;
+
+        newNode.Number = Nodes.Count + 1;
         Nodes.Add(newNode.Number, newNode);
     }
 
@@ -229,9 +231,8 @@ public class Node : ScriptableObject
         {
             bool isActionSet = false;
             Type typeComponent = Type.GetType(_nameScript);
-            MethodInfo[] methods = GameObject.Find(_nameGameObject).GetComponent(typeComponent)
-                .GetType()
-                .GetMethods();
+            Component script = GameObject.Find(_nameGameObject).GetComponent(typeComponent);
+            MethodInfo[] methods = script.GetType().GetMethods();
 
             foreach (var nameAction in _nameAction)
             {
@@ -240,7 +241,7 @@ public class Node : ScriptableObject
                     if (method.Name == nameAction
                         && method.ReturnType == action.Method.ReturnType)
                     {
-                        SetActions(method);
+                        SetActions(method, script);
                         isActionSet = true;
                         break;
                     }
@@ -249,9 +250,7 @@ public class Node : ScriptableObject
 
             return isActionSet;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 }

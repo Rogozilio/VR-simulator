@@ -18,12 +18,11 @@ MonoBehaviour:
   - GameModeValue
   _nameAction: []
   Name: MainMenu
-  IsUse: 1
-  NextNode:
-  - {fileID: 11400000, guid: b4a011f4eabf21744baf8ca7640eabb9, type: 2}
-  PrevNode: []
-  Number: 0
-  EditorPosition: {x: -122, y: 96}
+  IsUse: 0
+  NextNode: 02000000
+  PrevNode: 
+  Number: 1
+  EditorPosition: {x: -192, y: 75}
   Conditions:
   - Value:
       NameProperty: GameModeValue

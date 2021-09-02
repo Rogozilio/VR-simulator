@@ -124,16 +124,9 @@ public class SCADA_Controller : MonoBehaviour
             transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y +180, Bag.transform.localEulerAngles.z + 90);
         }
     }
-
-    /*public void VoiceDispatcher()
+    public void PlayDispatcher()
     {
-        if(MainMenuControlller.GameMode == 1f)
-        {
-            _audio.PlayOneShot(Notification1T);
-        }
-        else if(MainMenuControlller.GameMode == 2f)
-        {
-            _audio.PlayOneShot(Notification1);
-        }
-    }*/
+        Dispatcher dispatcher = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Dispatcher>();
+        dispatcher.Play();
+    }
 }

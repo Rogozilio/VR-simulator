@@ -19,13 +19,11 @@ MonoBehaviour:
   _nameAction:
   - DoNothing
   Name: PressureCheck
-  IsUse: 1
-  NextNode:
-  - {fileID: 0}
-  PrevNode:
-  - {fileID: 11400000, guid: 925624ca882661440a017951e16bb6e7, type: 2}
-  Number: 6
-  EditorPosition: {x: 940, y: 232}
+  IsUse: 0
+  NextNode: 00000000
+  PrevNode: 06000000
+  Number: 7
+  EditorPosition: {x: 967, y: 293}
   Conditions:
   - Value:
       NameProperty: CanGoFurther
