@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class MyAssetBundle
         BuildPipeline.BuildAssetBundles(assetBundleDirectory,
             BuildAssetBundleOptions.None,
             BuildTarget.StandaloneWindows64);
-        //AssetDatabase.Refresh();
+        AssetDatabase.Refresh();
     }
 
     public static Node[] Load(string nameAsset)
@@ -33,11 +34,54 @@ public class MyAssetBundle
                 throw new Exception("Failed to load AssetBundle!");
             }
 
-            Node[] nodes = myLoadedAssetBundle.LoadAllAssets<Node>();
+            Node[] nodesAssetBundle = myLoadedAssetBundle.LoadAllAssets<Node>();
             myLoadedAssetBundle.Unload(false);
-            return nodes;
+            if (nodesAssetBundle != null)
+            {
+                foreach (var nodeAB in nodesAssetBundle)
+                {
+                    bool isNodeExist = false;
+                    foreach (Node node in GetNodesAsset())
+                    {
+                        if (node.name == nodeAB.name)
+                        {
+                            isNodeExist = true;
+                            node.NextNode = nodeAB.NextNode;
+                            node.PrevNode = nodeAB.PrevNode;
+                            EditorUtility.SetDirty(node);
+                            break;
+                        }
+                    }
+
+                    if (!isNodeExist)
+                    {
+                        Node newScriptableObject = new Node();
+                        EditorUtility.CopySerialized(nodeAB, newScriptableObject);
+                        AssetDatabase.CreateAsset(newScriptableObject,
+                            Path.Combine("Assets/Nodes", nodeAB.name + ".asset"));
+                        AssetDatabase.SaveAssets();
+                        NodeEditor.SetMarker(newScriptableObject);
+                    }
+                    NodeEditor.AddInEditor();
+                }
+            }
+
+            return nodesAssetBundle;
         }
 
         return null;
+    }
+
+    public static Node[] GetNodesAsset()
+    {
+        List<Node> nodes = new List<Node>();
+        string[] assetNames = AssetDatabase.FindAssets("", new[] {"Assets/Nodes"});
+        foreach (string SOName in assetNames)
+        {
+            var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
+            nodes.Add(AssetDatabase.LoadAssetAtPath<Node>(SOpath));
+        }
+
+        return nodes.ToArray();
     }
 }

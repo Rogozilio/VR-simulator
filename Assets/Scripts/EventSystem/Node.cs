@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 using Component = UnityEngine.Component;
 
 [CreateAssetMenu(menuName = "EventSystem/Node", order = 1), ExecuteInEditMode]
 public class Node : ScriptableObject
 {
-    public static Dictionary<int, Node> Nodes = new Dictionary<int, Node>();
+    public static Dictionary<string, Node> Nodes = new Dictionary<string, Node>();
 
     public delegate void DelegateActionVoid();
 
@@ -32,20 +33,15 @@ public class Node : ScriptableObject
     private List<string> _nameAction = new List<string>();
 
     [HideInInspector]
-    public string Name = "Name";
-
-    [HideInInspector]
     public bool IsUse = false;
 
     [HideInInspector, SerializeField]
-    public int[] NextNode;
+    public string[] NextNode;
 
     [HideInInspector]
-    public List<int> PrevNode = new List<int>();
+    public List<string> PrevNode = new List<string>();
 
     private int _numberActiveCondition = 0;
-
-    public int Number;
 
     [HideInInspector]
     public Vector2 EditorPosition;
@@ -81,16 +77,6 @@ public class Node : ScriptableObject
     {
         get => _numberActiveCondition;
         set => _numberActiveCondition = value;
-    }
-
-    private void Awake()
-    {
-        AddInEditor(this);
-    }
-
-    private void OnEnable()
-    {
-        Name = name;
     }
 
     public DelegateActionVoid ActionVoid =>
@@ -162,20 +148,21 @@ public class Node : ScriptableObject
         }
     }
 
-    public static void AddInEditor(Node newNode)
-    {
-        foreach (var node in Nodes)
-        {
-            if (node.Key == newNode.Number)
-            {
-                Nodes[node.Key] = newNode;
-                return;
-            }
-        }
-
-        newNode.Number = Nodes.Count + 1;
-        Nodes.Add(newNode.Number, newNode);
-    }
+    // public static void AddInEditor()
+    // {
+    //     Node[] nodes = MyAssetBundle.GetNodesAsset();
+    //     for (int i = 0; i < nodes.Length; i++)
+    //     {
+    //         if (Nodes.ContainsKey(nodes[i].name))
+    //         {
+    //             Nodes[nodes[i].name] = nodes[i];
+    //         }
+    //         else
+    //         {
+    //             Nodes.Add(nodes[i].name, nodes[i]);
+    //         }
+    //     }
+    // }
 
     private float GetValueCondition(int numberProperty)
     {

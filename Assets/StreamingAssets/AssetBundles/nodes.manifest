@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2031697421
+CRC: 1288463784
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e4835b1ba8248a1cfca69a01fb7f16dd
+    Hash: f0cb747a9808ebc0d44e35b0b7cc945a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: decc492fe1b8d1eb5dcb676f701e7231
+    Hash: 320f5519b82bde2db427d0281db91bdb
 HashAppended: 0
 ClassTypes:
 - Class: 114
@@ -16,5 +16,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Nodes/Button.asset
+- Assets/Nodes/Door1.asset
 - Assets/Nodes/Door.asset
+- Assets/Nodes/a.asset
 Dependencies: []

@@ -10,17 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: Door
+  m_Name: a
   m_EditorClassIdentifier: 
-  _nameGameObject: Door
-  _nameScript: Door
+  _nameGameObject: 
+  _nameScript: 
   _nameProperty: []
-  _nameAction:
-  - OpenDoor
+  _nameAction: []
   IsUse: 0
-  NextNode:
-  - 
-  PrevNode:
-  - Button
-  EditorPosition: {x: 621, y: 149}
+  NextNode: []
+  PrevNode: []
+  EditorPosition: {x: 0, y: 0}
   Conditions: []

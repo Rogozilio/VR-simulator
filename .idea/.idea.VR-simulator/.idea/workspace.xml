@@ -2,12 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55a03d9e-2239-4d38-a3b0-62c37356e438" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.VR-simulator/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Nodes/Button.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nodes/Button.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nodes/Button.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nodes/Button.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Nodes/Door.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nodes/Door.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Door.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Nodes/Door.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Nodes/Door.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MyAssetBundle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MyAssetBundle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEditor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/MyAssetBundle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/MyAssetBundle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/AssetBundles/AssetBundles.manifest" afterDir="false" />
@@ -32,6 +40,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/64/38a8e487/SynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0DAB12D4-5C2A-4EDC-9335-79280843BDEB/ce/1f9b4446/StyleSheet.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0B8DB76A-688C-4D18-A15D-D7DFE092A035/e1/44cd2891/HostView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A8E296DC-7C7B-4E92-800D-9E996ED99E15/c8/3adf1b4b/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695D1CC9-3CCA-4506-9C52-8C15C9FDD749/89/9a15fddb/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -98,15 +107,16 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/StartPoint.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Edge.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Button.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/MyAssetBundle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MyAssetBundle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Door.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/Noda.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/EventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/MyAssetBundle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MyAssetBundle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Node.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/MainWindowEventSystem.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/FinishPoint.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ucRcFTYzgeVRMJktFyQJXT1iga" />
@@ -135,10 +145,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11656">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11008">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11656" />
+      <option name="pid" value="11008" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -214,7 +224,13 @@
       <workItem from="1629875615421" duration="28494000" />
       <workItem from="1629978797228" duration="26005000" />
       <workItem from="1630047425489" duration="1231000" />
-      <workItem from="1630151208088" duration="9504000" />
+      <workItem from="1630151208088" duration="10053000" />
+      <workItem from="1630404831316" duration="9301000" />
+      <workItem from="1630501830993" duration="9229000" />
+      <workItem from="1630582550058" duration="2396000" />
+      <workItem from="1630641261381" duration="21157000" />
+      <workItem from="1630741745732" duration="33131000" />
+      <workItem from="1630824139770" duration="8717000" />
     </task>
     <servers />
   </component>
@@ -237,24 +253,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/EventSystem/Editor/NodeEvent.cs</url>
-          <line>311</line>
-          <properties documentPath="D:\unity\VR-simulator\Assets\Scripts\EventSystem\Editor\NodeEvent.cs" initialLine="311" containingFunctionPresentation="method 'Delete'">
-            <startOffsets>
-              <option value="10945" />
-            </startOffsets>
-            <endOffsets>
-              <option value="10986" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

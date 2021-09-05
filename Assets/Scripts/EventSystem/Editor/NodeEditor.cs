@@ -12,14 +12,14 @@ using Valve.VR.InteractionSystem;
 
 [CustomEditor(typeof(Node))]
 [CanEditMultipleObjects]
-public class Noda : UnityEditor.Editor
+public class NodeEditor : UnityEditor.Editor
 {
     private Node _node;
 
     private int _indexGameObj = 0;
     private int _indexScript = 0;
-    private List<int> _indexProperty = new List<int>();
-    private List<int> _indexAction = new List<int>();
+    private List<int> _indexProperty;
+    private List<int> _indexAction;
 
     private string[] _optionsGameObj;
     private string[] _optionsScript;
@@ -29,12 +29,14 @@ public class Noda : UnityEditor.Editor
     private MonoBehaviour[] _gameObjects;
     private MonoBehaviour[] _scripts;
     private PropertyInfo[] _property;
-    private List<MethodInfo> _action = new List<MethodInfo>();
+    private List<MethodInfo> _action;
 
     private void OnEnable()
     {
         _node = target as Node;
-        _node.Name = _node.name;
+        _indexProperty = new List<int>();
+        _indexAction = new List<int>();
+        _action = new List<MethodInfo>();
         SetGameObjects();
         if (!string.IsNullOrEmpty(_node.NameGameObject))
         {
@@ -70,14 +72,11 @@ public class Noda : UnityEditor.Editor
         GUILayout.Space(20);
         if (GUILayout.Button("Save", GUILayout.Height(30f)))
         {
-            string path = AssetDatabase.GetAssetPath(_node);
-            var importer = AssetImporter.GetAtPath(path);
-            importer.assetBundleName = "nodes";
-
+            SetMarker(_node);
             if (_node.Conditions.Count == 0)
-                _node.NextNode = new[] {0};
+                _node.NextNode = new[] {""};
             else
-                _node.NextNode = new int[_node.Conditions.Count];
+                _node.NextNode = new string[_node.Conditions.Count];
 
             for (int i = 0; i < _node.Conditions.Count; i++)
             {
@@ -97,7 +96,7 @@ public class Noda : UnityEditor.Editor
             }
 
             EditorUtility.SetDirty(_node);
-            Node.AddInEditor(_node);
+            AddInEditor();
         }
     }
 
@@ -187,6 +186,7 @@ public class Noda : UnityEditor.Editor
             }
         }
     }
+
     private void ShowProperty()
     {
         GUILayoutOption[] options = {GUILayout.MaxWidth(100f)};
@@ -246,6 +246,7 @@ public class Noda : UnityEditor.Editor
         EditorGUI.indentLevel++;
         GUILayout.Label("ACTION: ");
         SetAction();
+        
         for (int i = 0; i < _indexAction.Count; i++)
         {
             GUILayout.BeginHorizontal();
@@ -267,7 +268,7 @@ public class Noda : UnityEditor.Editor
                 _indexAction.Add(0);
                 _node.NameAction.Add("");
             }
-
+            
             GUILayout.EndHorizontal();
         }
 
@@ -277,6 +278,29 @@ public class Noda : UnityEditor.Editor
         {
             _node.NameAction.Add("");
             _indexAction.Add(0);
+        }
+    }
+
+    public static void SetMarker(Node node)
+    {
+        string path = AssetDatabase.GetAssetPath(node);
+        var importer = AssetImporter.GetAtPath(path);
+        importer.assetBundleName = "nodes";
+    }
+
+    public static void AddInEditor()
+    {
+        Node[] nodes = MyAssetBundle.GetNodesAsset();
+        for (int i = 0; i < nodes.Length; i++)
+        {
+            if (Node.Nodes.ContainsKey(nodes[i].name))
+            {
+                Node.Nodes[nodes[i].name] = nodes[i];
+            }
+            else
+            {
+                Node.Nodes.Add(nodes[i].name, nodes[i]);
+            }
         }
     }
 }
