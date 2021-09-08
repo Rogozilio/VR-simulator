@@ -18,12 +18,12 @@ MonoBehaviour:
   - CanGoFurther
   _nameAction:
   - DoNothing
-  Name: PressureCheck
-  IsUse: 0
-  NextNode: 00000000
-  PrevNode: 06000000
-  Number: 7
-  EditorPosition: {x: 967, y: 293}
+  IsUse: 1
+  NextNode:
+  - 
+  PrevNode:
+  - Valve3
+  EditorPosition: {x: 1242, y: 374}
   Conditions:
   - Value:
       NameProperty: CanGoFurther

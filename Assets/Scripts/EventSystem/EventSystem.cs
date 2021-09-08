@@ -15,7 +15,7 @@ public class EventSystem : MonoBehaviour
         {
             foreach (var next in node.NextNode)
             {
-                if (next > 0 && node.PrevNode.Count == 0)
+                if (next != "" && node.PrevNode.Count == 0)
                 {
                     _activeNodes.Add(node);
                     break;
@@ -37,7 +37,7 @@ public class EventSystem : MonoBehaviour
                 {
                     foreach (var node in _allNodes)
                     {
-                        if (node.Number ==
+                        if (node.name ==
                             nodeActive.NextNode[nodeActive.NumberActiveCondition - 1])
                         {
                             _activeNodes.Add(node);

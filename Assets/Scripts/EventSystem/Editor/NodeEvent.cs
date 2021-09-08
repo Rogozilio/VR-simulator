@@ -86,7 +86,7 @@ namespace Editor
 
         private void CheckWidthFromName()
         {
-            float countMark = _data.Name.Length;
+            float countMark = _data.name.Length;
             float lengthMark = 9.5f;
 
             foreach (var condition in _data.GetConditions())
@@ -111,7 +111,7 @@ namespace Editor
 
         private void InitBox(Vector2 position)
         {
-            InitBoxName(_data.Name, position);
+            InitBoxName(_data.name, position);
             InitBoxConditions(_data.GetConditions(), position);
             InitBoxFinish(position);
             _box = new Rect(position
@@ -227,6 +227,7 @@ namespace Editor
         public void HandleEvents(Event e, bool isMoveAllBoxs)
         {
             _startEdge.ForEach(x => x.HandleEvents(e));
+
             switch (e.type)
             {
                 case EventType.MouseDown:
@@ -289,41 +290,41 @@ namespace Editor
                 if (node == _data)
                 {
                     node.IsUse = false;
-                    
+
                     foreach (var key in node.PrevNode)
                     {
-                        if(key > 0)
+                        if (key != "")
                         {
                             for (int i = 0; i < Node.Nodes[key].NextNode.Length; i++)
                             {
-                                if (Node.Nodes[key].NextNode[i] == node.Number)
+                                if (Node.Nodes[key].NextNode[i] == node.name)
                                 {
-                                    Node.Nodes[key].NextNode[i] = 0;
+                                    Node.Nodes[key].NextNode[i] = "";
                                 }
                             }
                         }
                     }
-                    
+
                     foreach (var key in node.NextNode)
                     {
-                        if (key > 0)
+                        if (key != "")
                         {
                             foreach (var keyPrev in Node.Nodes[key].PrevNode)
                             {
-                                if (keyPrev == node.Number)
+                                if (keyPrev == node.name)
                                 {
                                     Node.Nodes[key].PrevNode.Remove(keyPrev);
                                     break;
                                 }
-                            }  
+                            }
                         }
                     }
+
                     node.PrevNode.Clear();
                     for (int i = 0; i < node.NextNode.Length; i++)
                     {
-                        node.NextNode[i] = 0;
+                        node.NextNode[i] = "";
                     }
-                        
                 }
             }
 

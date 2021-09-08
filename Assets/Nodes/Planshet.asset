@@ -19,12 +19,12 @@ MonoBehaviour:
   _nameAction:
   - Transfer
   - PlayDispatcher
-  Name: Planshet
-  IsUse: 0
-  NextNode: 03000000
-  PrevNode: 01000000
-  Number: 2
-  EditorPosition: {x: 2, y: 100}
+  IsUse: 1
+  NextNode:
+  - Valve1
+  PrevNode:
+  - MainMenu
+  EditorPosition: {x: 229, y: 114}
   Conditions:
   - Value:
       NameProperty: PressuresTransferredCorrectly

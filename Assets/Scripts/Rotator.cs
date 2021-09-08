@@ -5,61 +5,23 @@ using Valve.VR.InteractionSystem;
 
 public class Rotator : MonoBehaviour
 {
-    public GameObject RotatingPart;
+    public float targetAngle = 0;
+    private float currentAngle = 0;
+    [SerializeField]
+    private float rotationSpeed = 10f;
 
-    //private bool areValuesSet = false;
-    private bool canChangePressure = false;
-    //private int direction = 0;
-    private float angleBoundsDelta = 5f;
-    private CircularDrive cd;
-
-    void Start()
+    void FixedUpdate()
     {
-        cd = gameObject.GetComponent(typeof(CircularDrive)) as CircularDrive;
-    }
-
-    void Update()
-    {
-
-        if ((cd.outAngle < cd.minAngle) || (cd.outAngle > cd.maxAngle))
+        if (targetAngle > 90)
         {
-            // Error: angle out of bounds
+            targetAngle = 90;
         }
-        else
+
+        if (currentAngle < targetAngle)
         {
-            if (cd.outAngle <= cd.minAngle + angleBoundsDelta)
-            {
-                if (canChangePressure)
-                {
-                    if (RotatingPart.transform.eulerAngles.y < 90)
-                    {
-                        RotatingPart.transform.eulerAngles = new Vector3(0, RotatingPart.transform.eulerAngles.y + 2f, 0);
-                    }
-                }
-                canChangePressure = false;
-            }
-            else if (cd.outAngle >= cd.maxAngle - angleBoundsDelta)
-            {
-                canChangePressure = true;
-            }
-            //else if ((cd.outAngle >= (cd.maxAngle + cd.minAngle) / 2f - angleBoundsDelta) && (cd.outAngle <= (cd.maxAngle + cd.minAngle) / 2f + angleBoundsDelta))
-            //{
-            //    canChangePressure = true;
-            //}
+            currentAngle += Time.deltaTime * rotationSpeed;
         }
-    }
 
-    public void OnMinAngle()
-    {
-        //canChangePressure = true;
-    }
-
-    public void OnMaxAngle()
-    {
-        //if (canChangePressure)
-        //{
-        //    PMeter.TargetPressure = PMeter.TargetPressure + 1f * direction;
-        //}
-        //canChangePressure = false;
+        transform.localEulerAngles = new Vector3(0, currentAngle, 0);
     }
 }

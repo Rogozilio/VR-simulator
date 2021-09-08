@@ -17,12 +17,11 @@ MonoBehaviour:
   _nameProperty:
   - GameModeValue
   _nameAction: []
-  Name: MainMenu
-  IsUse: 0
-  NextNode: 02000000
-  PrevNode: 
-  Number: 1
-  EditorPosition: {x: -192, y: 75}
+  IsUse: 1
+  NextNode:
+  - Planshet
+  PrevNode: []
+  EditorPosition: {x: 32, y: 74}
   Conditions:
   - Value:
       NameProperty: GameModeValue

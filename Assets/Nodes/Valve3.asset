@@ -18,12 +18,12 @@ MonoBehaviour:
   - IsClosed
   _nameAction:
   - PlayDispatcher
-  Name: Valve3
-  IsUse: 0
-  NextNode: 07000000
-  PrevNode: 05000000
-  Number: 6
-  EditorPosition: {x: 811, y: 250}
+  IsUse: 1
+  NextNode:
+  - PressureCheck
+  PrevNode:
+  - Valve2
+  EditorPosition: {x: 1054, y: 331}
   Conditions:
   - Value:
       NameProperty: IsClosed

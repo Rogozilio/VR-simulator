@@ -18,12 +18,12 @@ MonoBehaviour:
   - IsOpen
   _nameAction:
   - PlayDispatcher
-  Name: Valve1
-  IsUse: 0
-  NextNode: 04000000
-  PrevNode: 02000000
-  Number: 3
-  EditorPosition: {x: 372, y: 164}
+  IsUse: 1
+  NextNode:
+  - Valve4
+  PrevNode:
+  - Planshet
+  EditorPosition: {x: 578, y: 154}
   Conditions:
   - Value:
       NameProperty: IsOpen

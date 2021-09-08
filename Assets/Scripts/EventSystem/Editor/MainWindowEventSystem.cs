@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using Directory = UnityEngine.Windows.Directory;
 using Object = UnityEngine.Object;
@@ -11,7 +12,7 @@ namespace Editor
 {
     public class MainWindowEventSystem : EditorWindow
     {
-        private List<NodeEvent> _nodeEvents = new List<NodeEvent>();
+        private List<NodeEvent> _nodeEvents;
 
         private StartPoint _startPoint;
         private FinishPoint _finishPoint;
@@ -26,55 +27,17 @@ namespace Editor
 
         private void OnEnable()
         {
-            bool isNodesNull;
-            //Удаление нод из словаря при существовании null нод
-            do
-            {
-                isNodesNull = false;
-                foreach (var node in Node.Nodes)
-                {
-                    int key = (node.Value == null) ? node.Key : -1;
-                    if (key > -1)
-                    {
-                        for (; key < Node.Nodes.Count - 1; key++)
-                        {
-                            Node.Nodes[key] = Node.Nodes[key + 1];
-                            Node.Nodes[key].Number = key;
-                        }
+            _nodeEvents = new List<NodeEvent>();
 
-                        Node.Nodes.Remove(Node.Nodes.Count - 1);
-                        //Debug.Log("Delete node " + node.Value.Name);
-                        isNodesNull = true;
-                        break;
-                    }
-                }
-            } while (isNodesNull);
+            NodeEditor.AddInEditor();
 
             Node[] newNodes = MyAssetBundle.Load("nodes");
             if (newNodes != null)
             {
-                string[] assetNames = AssetDatabase.FindAssets("", new[] {"Assets/Nodes"});
-
-                foreach (string SOName in assetNames)
-                {
-                    var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
-                    Node node = AssetDatabase.LoadAssetAtPath<Node>(SOpath);
-                    foreach (var newNode in newNodes)
-                    {
-                        if (newNode.Number == node.Number)
-                        {
-                            node.NextNode = newNode.NextNode;
-                            node.PrevNode = newNode.PrevNode;
-                        }
-                    }
-
-                    EditorUtility.SetDirty(node);
-                    Node.AddInEditor(node);
-                }
-
                 foreach (var node in newNodes)
                 {
-                    OnAddNode(Node.Nodes[node.Number], node.EditorPosition);
+                    if (node.IsUse)
+                        OnAddNode(Node.Nodes[node.name], node.EditorPosition);
                 }
             }
             else
@@ -88,6 +51,7 @@ namespace Editor
             EditorGUIUtility.AddCursorRect(
                 new Rect(0, 0, Screen.width, Screen.height),
                 (_isMoveAllBoxs) ? MouseCursor.Pan : MouseCursor.Arrow);
+
 
             HandleEvent(Event.current);
 
@@ -186,16 +150,16 @@ namespace Editor
             GenericMenu genericMenu = new GenericMenu();
             foreach (var node in Node.Nodes.Values)
             {
-                //if (!node.IsUse)
-                //{
-                    genericMenu.AddItem(new GUIContent(node.Name)
+                if (!node.IsUse)
+                {
+                    genericMenu.AddItem(new GUIContent(node.name)
                         , false, () => OnAddNode(node, mousePosition));
-                //}
-                //else
-                //{
-                //    genericMenu.AddItem(new GUIContent(node.Name + "(Used)")
-                //        , false, func: null);
-                //}
+                }
+                else
+                {
+                    genericMenu.AddItem(new GUIContent(node.name + "(Used)")
+                        , false, func: null);
+                }
             }
 
             genericMenu.ShowAsContext();
@@ -219,10 +183,10 @@ namespace Editor
 
         private void AddLinkNode(StartPoint start, FinishPoint finish)
         {
-            start.Node.Data.NextNode[start.Number - 1] = finish.Node.Data.Number;
+            start.Node.Data.NextNode[start.Number - 1] = finish.Node.Data.name;
             if (finish.Node.Data.PrevNode != null &&
-                !finish.Node.Data.PrevNode.Contains(start.Node.Data.Number))
-                finish.Node.Data.PrevNode.Add(start.Node.Data.Number);
+                !finish.Node.Data.PrevNode.Contains(start.Node.Data.name))
+                finish.Node.Data.PrevNode.Add(start.Node.Data.name);
         }
 
         private void ShowEdge()
@@ -236,10 +200,10 @@ namespace Editor
                         Vector2 start = node.Start[i].Box.center;
                         foreach (var node2 in _nodeEvents)
                         {
-                            if (node2.Data.Number == node.Data.NextNode[i])
+                            if (node2.Data.name == node.Data.NextNode[i])
                             {
                                 Vector2 finish = _nodeEvents.First
-                                    (x => x.Data.Number == node2.Data.Number).Finish.Box.center;
+                                    (x => x.Data.name == node2.Data.name).Finish.Box.center;
                                 _edge.Set(start, finish);
                                 _edge.Show();
                                 break;

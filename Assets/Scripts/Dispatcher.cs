@@ -50,11 +50,17 @@ public class Dispatcher : MonoBehaviour
     {
         if(MainMenuControlller.GameMode == 1)
         {
-            _audio.PlayOneShot(ClipsT[index++]);
+            if (index < ClipsT.Length)
+            {
+                _audio.PlayOneShot(ClipsT[index++]);
+            }
         }
         else if (MainMenuControlller.GameMode == 2)
         {
-            _audio.PlayOneShot(Clips[index++]);
+            if (index < Clips.Length)
+            {
+                _audio.PlayOneShot(Clips[index++]);
+            }
         }
     }
 
