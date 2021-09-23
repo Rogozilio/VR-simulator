@@ -10,10 +10,8 @@ public class PMeterArrowRotation : MonoBehaviour
 
     public PressureStats PS;
     public bool isOUT;
-
     private bool areValuesSet = false;
-    private float minPressure = 0f;
-    private float maxPressure = 25f;
+
     [SerializeField]
     private float currentPressure = 0f;
     public float CurrentPressure { get { return currentPressure; } }
@@ -21,14 +19,21 @@ public class PMeterArrowRotation : MonoBehaviour
     private float targetPressure = 0f;
     public float TargetPressure { get { return targetPressure; } set { targetPressure = value; } }
 
+    [SerializeField]
+    private float minPressure = 0f;
+    [SerializeField]
+    private float maxPressure = 25f;
     private float finalTargetPressure = 0f;
 
-    public float arrowAcceleration = 256f;
-
+    [SerializeField]
     private float minAngle = -60f;
+    [SerializeField]
     private float maxAngle = 60f;
     private float currentAngle = 0f;
     private float targetAngle = 0f;
+
+    [SerializeField]
+    public float arrowAcceleration = 256f;
 
     void Start()
     {
@@ -57,12 +62,14 @@ public class PMeterArrowRotation : MonoBehaviour
 
     private float ConvertPressureToAngle(float pressure)
     {
-        return (float) (pressure - minPressure) / (maxPressure - minPressure) * (maxAngle - minAngle) + minAngle; 
+        //return (float) (pressure - minPressure) / (maxPressure - minPressure) * (maxAngle - minAngle) + minAngle;
+        return (pressure - minPressure) / (maxPressure - minPressure) * (maxAngle - minAngle) + minAngle;
     }
 
     private float ConvertAngleToPressure(float angle)
     {
-        return Convert.ToInt32((angle - minAngle) / (maxAngle - minAngle) * (maxPressure - minPressure) + minPressure);
+        //return Convert.ToInt32((angle - minAngle) / (maxAngle - minAngle) * (maxPressure - minPressure) + minPressure);
+        return (angle - minAngle) / (maxAngle - minAngle) * (maxPressure - minPressure) + minPressure;
     }
 
     private void UpdateAngleAndPressure()
@@ -83,7 +90,7 @@ public class PMeterArrowRotation : MonoBehaviour
 
     private void SetArrowAngle()
     {
-        transform.localEulerAngles = new Vector3(0, 0, -currentAngle);
+        transform.localEulerAngles = new Vector3(0, 0, currentAngle);
     }
 
     private void CheckPressure()

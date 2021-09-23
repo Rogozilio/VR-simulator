@@ -18,14 +18,15 @@ public class PressureStats : MonoBehaviour
     void Start()
     {
         System.Random rnd = new System.Random();
-        startPressureIN = rnd.Next(20, 25 + 1);
-        int sp = rnd.Next(5, 19 + 1);
-        int tp = 0;
+        int pi = rnd.Next(400, 600 + 1);
+        int sp = rnd.Next(0, 300 + 1);
+        int tp;
         do
         {
-            tp = rnd.Next(7, 15 + 1);
+            tp = rnd.Next(100, pi - 100 + 1);
         } while (tp == sp);
-        startPressureOUT = sp;
-        targetPressureOUT = tp;
+        startPressureIN = pi / 100f;
+        startPressureOUT = sp / 100f;
+        targetPressureOUT = tp / 100f;
     }
 }
