@@ -5,23 +5,41 @@ using Valve.VR.InteractionSystem;
 
 public class Rotator : MonoBehaviour
 {
-    public float targetAngle = 0;
-    private float currentAngle = 0;
+    public PMeterArrowRotation[] Arrows;
+
+    public float targetAngle = 0f;
+    private float minAngle = 0f;
+    private float maxAngle = 90f;
+    private float currentAngle = 0f;
     [SerializeField]
     private float rotationSpeed = 10f;
 
     void FixedUpdate()
     {
-        if (targetAngle > 90)
+        if (targetAngle > maxAngle)
         {
-            targetAngle = 90;
+            targetAngle = maxAngle;
+        }
+
+        if (targetAngle < minAngle)
+        {
+            targetAngle = minAngle;
         }
 
         if (currentAngle < targetAngle)
         {
             currentAngle += Time.deltaTime * rotationSpeed;
         }
+        else if (currentAngle > targetAngle)
+        {
+            currentAngle -= Time.deltaTime * rotationSpeed;
+        }
 
-        transform.localEulerAngles = new Vector3(0, currentAngle, 0);
+        foreach (PMeterArrowRotation arr in Arrows)
+        {
+            arr.coef1 = currentAngle / maxAngle;
+        }
+
+        transform.localEulerAngles = new Vector3(0, -currentAngle, 0);
     }
 }

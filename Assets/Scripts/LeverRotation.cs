@@ -7,9 +7,11 @@ public class LeverRotation : MonoBehaviour
 {
     public Rotator rotatorObject;
 
-    private bool canChangePressure = true;
-    private float angleBoundsDelta = 5f;
     private CircularDrive cd;
+    public float directionCoef = 1f;
+    private bool canChangePressure = true;
+    private float angleBoundsDelta = 2.5f;
+    private float rotationAngle = 5f;
 
     void Start()
     {
@@ -26,15 +28,15 @@ public class LeverRotation : MonoBehaviour
         {
             if (cd.outAngle <= cd.minAngle + angleBoundsDelta)
             {
-                if (canChangePressure)
-                {
-                    rotatorObject.targetAngle = rotatorObject.targetAngle + 5f;
-                }
-                canChangePressure = false;
+                canChangePressure = true;
             }
             else if (cd.outAngle >= cd.maxAngle - angleBoundsDelta)
             {
-                canChangePressure = true;
+                if (canChangePressure)
+                {
+                    rotatorObject.targetAngle = rotatorObject.targetAngle + rotationAngle * directionCoef;
+                }
+                canChangePressure = false;
             }
         }
     }

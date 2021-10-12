@@ -38,7 +38,7 @@ public class MainMenuControlller : MonoBehaviour
     public void LoadGameSceneExam()
     {
         IsTraining = false;
-        Player.transform.position = new Vector3(38f, 0f, -2.7f);
+        Player.transform.position = new Vector3(38.3f, 0.04f, -6f);
         Debug.Log("Игрок перемещён");
         //Notification1.Play();
         Noise.Play();

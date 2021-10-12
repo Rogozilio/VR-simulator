@@ -28,7 +28,6 @@ public class SCADA_Controller : MonoBehaviour
     public GameObject Bag;
     public bag bag;
 
-    public AudioSource _audio;
     public AudioClip Notification1;
     public AudioClip Notification1T;
 
@@ -103,17 +102,17 @@ public class SCADA_Controller : MonoBehaviour
 
     public void Transfer()
     {
-        if ((Single.Parse(InNumber.GetComponent<Text>().text) == PS.StartPressureIN) &&
-            (Single.Parse(OutNumber.GetComponent<Text>().text) == PS.StartPressureOUT))
-        {
-            ReqField.GetComponent<Text>().text = PS.TargetPressureOUT.ToString();
-            pressuresTransferredCorrectly = 1f;
-        }
-        else
-        {
+        //if ((Single.Parse(InNumber.GetComponent<Text>().text) == PS.StartPressureIN) &&
+        //    (Single.Parse(OutNumber.GetComponent<Text>().text) == PS.StartPressureOUT))
+        //{
+        //    ReqField.GetComponent<Text>().text = PS.TargetPressureOUT.ToString();
+        //    pressuresTransferredCorrectly = 1f;
+        //}
+        //else
+        //{
             pressuresTransferredCorrectly = 0f;
             ReqField.GetComponent<Text>().text = "Показания не соответсвуют ГОСТу";
-        }
+        //}
     }
 
     void Update()

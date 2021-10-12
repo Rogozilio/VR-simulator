@@ -10,10 +10,11 @@ public class PMeterArrowRotation : MonoBehaviour
 
     public PressureStats PS;
     public bool isOUT;
-
+    public bool canRotate = true;
+    public float coef1 = 1f;
+    public float coef2 = 1f;
     private bool areValuesSet = false;
-    private float minPressure = 0f;
-    private float maxPressure = 25f;
+
     [SerializeField]
     private float currentPressure = 0f;
     public float CurrentPressure { get { return currentPressure; } }
@@ -21,14 +22,21 @@ public class PMeterArrowRotation : MonoBehaviour
     private float targetPressure = 0f;
     public float TargetPressure { get { return targetPressure; } set { targetPressure = value; } }
 
+    [SerializeField]
+    private float minPressure = 0f;
+    [SerializeField]
+    private float maxPressure = 10f;
     private float finalTargetPressure = 0f;
-
-    public float arrowAcceleration = 256f;
-
+    
+    [SerializeField]
     private float minAngle = -60f;
+    [SerializeField]
     private float maxAngle = 60f;
+    [SerializeField]
     private float currentAngle = 0f;
     private float targetAngle = 0f;
+
+    public float arrowAcceleration = 256f;
 
     void Start()
     {
@@ -37,32 +45,47 @@ public class PMeterArrowRotation : MonoBehaviour
 
     void Update()
     {
-        if (!areValuesSet)
+        /*if (!areValuesSet)
 		{
             if (isOUT)
             {
-                targetPressure = PS.StartPressureOUT;
-                finalTargetPressure = PS.TargetPressureOUT;
+                //targetPressure = PS.StartPressureOUT;
+                //finalTargetPressure = PS.TargetPressureOUT;
+                targetPressure = PS.StartPressureIN * coef1 * coef2 * 1000f / PS.CustomersNumber;
             }
             else
             {
                 targetPressure = PS.StartPressureIN;
             }
             areValuesSet = true;
-        }
+        }*/
 
-        UpdateAngleAndPressure();
-        CheckPressure();
+        targetPressure = PS.StartPressureIN;
+
+        if (canRotate)
+        {
+            UpdateAngleAndPressure();
+            CheckPressure();
+        }
     }
 
     private float ConvertPressureToAngle(float pressure)
     {
-        return (float) (pressure - minPressure) / (maxPressure - minPressure) * (maxAngle - minAngle) + minAngle; 
+        if (isOUT)
+        {
+            pressure = pressure * coef1 * coef2 * 1000f / PS.CustomersNumber;
+        }
+        else
+        {
+            pressure = pressure * coef1 * coef2;
+        }
+
+        return (pressure - minPressure) / (maxPressure - minPressure) * (maxAngle - minAngle) + minAngle;
     }
 
     private float ConvertAngleToPressure(float angle)
     {
-        return Convert.ToInt32((angle - minAngle) / (maxAngle - minAngle) * (maxPressure - minPressure) + minPressure);
+        return (angle - minAngle) / (maxAngle - minAngle) * (maxPressure - minPressure) + minPressure;
     }
 
     private void UpdateAngleAndPressure()
@@ -74,7 +97,7 @@ public class PMeterArrowRotation : MonoBehaviour
         }
         else
         {
-            currentAngle += Time.deltaTime * arrowAcceleration / 10f;
+            currentAngle += Time.deltaTime * arrowAcceleration;// / 10f;
         }
         currentPressure = ConvertAngleToPressure(currentAngle);
 
@@ -83,7 +106,7 @@ public class PMeterArrowRotation : MonoBehaviour
 
     private void SetArrowAngle()
     {
-        transform.localEulerAngles = new Vector3(0, 0, -currentAngle);
+        transform.localEulerAngles = new Vector3(0, 0, currentAngle);
     }
 
     private void CheckPressure()
@@ -92,12 +115,12 @@ public class PMeterArrowRotation : MonoBehaviour
         if ((currentPressure >= finalTargetPressure - deltaP) && (currentPressure <= finalTargetPressure + deltaP))
         {
             canGoFurther = 1f;
-            Debug.Log("Ура! Всё работает!");
+            //Debug.Log("Ура! Всё работает!");
         }
         else
         {
             canGoFurther = 0f;
-            Debug.Log("Не всё работает, но это нормально");
+            //Debug.Log("Не всё работает, но это нормально");
         }
     }
 
