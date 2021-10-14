@@ -10,6 +10,7 @@ TagManager:
   - RightHand
   - Bag
   - MapCase
+  - Manometr
   layers:
   - Default
   - TransparentFX
