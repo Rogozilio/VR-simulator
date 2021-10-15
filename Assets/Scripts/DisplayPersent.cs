@@ -12,7 +12,7 @@ public class DisplayPersent : MonoBehaviour
     public GameObject Number;
     public PMeterArrowRotation[] Arrows;
     private CircularDrive cd;
-    private int persent;
+    public float persent;
     [SerializeField]
     private float angle;
 
@@ -30,10 +30,11 @@ public class DisplayPersent : MonoBehaviour
             arr.coef2 = angle;
         }
 
-        persent = (int)(angle * 100f);
-        if (persent != Int32.Parse(Number.GetComponent<Text>().text))
-        {
-            Number.GetComponent<Text>().text = persent.ToString();
-        }
+        persent = (angle * 100f);
+        Number.GetComponent<Text>().text = (Math.Round(persent, 2).ToString() + "%");
+        //if (persent != float.Parse(Number.GetComponent<Text>().text))
+        //{
+        //    Number.GetComponent<Text>().text = /*(persent.ToString() + "%");*/(Math.Round(persent, 2).ToString() + "%");
+        //}
     }
 }

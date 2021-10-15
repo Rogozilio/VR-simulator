@@ -27,7 +27,7 @@ public class PMeterArrowRotation : MonoBehaviour
     [SerializeField]
     private float maxPressure = 10f;
     private float finalTargetPressure = 0f;
-    
+
     [SerializeField]
     private float minAngle = -60f;
     [SerializeField]
@@ -40,26 +40,11 @@ public class PMeterArrowRotation : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        /*if (!areValuesSet)
-		{
-            if (isOUT)
-            {
-                //targetPressure = PS.StartPressureOUT;
-                //finalTargetPressure = PS.TargetPressureOUT;
-                targetPressure = PS.StartPressureIN * coef1 * coef2 * 1000f / PS.CustomersNumber;
-            }
-            else
-            {
-                targetPressure = PS.StartPressureIN;
-            }
-            areValuesSet = true;
-        }*/
-
         targetPressure = PS.StartPressureIN;
 
         if (canRotate)
