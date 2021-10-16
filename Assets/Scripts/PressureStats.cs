@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PressureStats : MonoBehaviour
 {
-    [SerializeField]
     private float startPressureIN;
     public float StartPressureIN { get { return startPressureIN; } }
     [SerializeField]

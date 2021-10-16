@@ -10,22 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: Valve2
+  m_Name: LeverIN_ON
   m_EditorClassIdentifier: 
-  _nameGameObject: Valve (2)
-  _nameScript: ValveMinMaxAngleCheck
-  _nameProperty:
-  - IsClosed
+  _nameGameObject: ES_LeverIN
+  _nameScript: OutlineOnOff
+  _nameProperty: []
   _nameAction:
-  - PlayDispatcher
+  - OutlineOn
   IsUse: 1
   NextNode:
-  - Valve3
+  - ValveIN
   PrevNode:
-  - Valve4
-  EditorPosition: {x: 880, y: 273}
-  Conditions:
-  - Value:
-      NameProperty: IsClosed
-      Opertor: 2
-      Value: 1
+  - LeverOUT_OFF
+  EditorPosition: {x: 55, y: 576}
+  Conditions: []

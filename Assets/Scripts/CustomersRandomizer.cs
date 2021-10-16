@@ -8,12 +8,12 @@ public class CustomersRandomizer : MonoBehaviour
     private float kostylEnding;
     public float KostylEnding { get { return kostylEnding; } }
 
-
     [SerializeField]
     private bool isActive;
     private float targetCustomersNumber;
     private float nextChangeDelta;
     private float nextChangeTimer;
+    [SerializeField]
     private float totalTimer;
     private float changeSpeed;
 

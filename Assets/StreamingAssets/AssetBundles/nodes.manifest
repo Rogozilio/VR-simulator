@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2711651598
+CRC: 766409301
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 76f56a108d2b0a1733d3858984705143
+    Hash: 1950e5bc154a15ec66cfd69f0dfc00cc
   TypeTreeHash:
     serializedVersion: 2
     Hash: 320f5519b82bde2db427d0281db91bdb
@@ -15,11 +15,19 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Nodes/PressureCheck.asset
-- Assets/Nodes/Valve3.asset
-- Assets/Nodes/Valve4.asset
-- Assets/Nodes/Valve2.asset
-- Assets/Nodes/Planshet.asset
-- Assets/Nodes/Valve1.asset
-- Assets/Nodes/MainMenu.asset
+- Assets/Nodes/ValveIN.asset
+- Assets/Nodes/TurnOn.asset
+- Assets/Nodes/LeverIN_ON.asset
+- Assets/Nodes/ValveGate_ON.asset
+- Assets/Nodes/LeverDetour_ON.asset
+- Assets/Nodes/LeverIN_OFF.asset
+- Assets/Nodes/LeverOUT_OFF.asset
+- Assets/Nodes/ValveGate_OFF.asset
+- Assets/Nodes/CustomersCheck.asset
+- Assets/Nodes/LeverDetour_OFF.asset
+- Assets/Nodes/LeverOUT_ON.asset
+- Assets/Nodes/GameOver.asset
+- Assets/Nodes/MenuController.asset
+- Assets/Nodes/ValveDetour.asset
+- Assets/Nodes/ValveOUT.asset
 Dependencies: []

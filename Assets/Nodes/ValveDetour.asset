@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
+  m_Name: ValveDetour
+  m_EditorClassIdentifier: 
+  _nameGameObject: ES_RotatorDetour
+  _nameScript: Rotator
+  _nameProperty:
+  - KostylOpen
+  _nameAction: []
+  IsUse: 1
+  NextNode:
+  - LeverDetour_OFF
+  PrevNode:
+  - LeverDetour_ON
+  EditorPosition: {x: 207, y: 222}
+  Conditions:
+  - Value:
+      NameProperty: KostylOpen
+      Opertor: 2
+      Value: 1

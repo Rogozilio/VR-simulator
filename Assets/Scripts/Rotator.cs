@@ -6,6 +6,10 @@ using Valve.VR.InteractionSystem;
 public class Rotator : MonoBehaviour
 {
     public PMeterArrowRotation[] Arrows;
+    private float kostylOpen;
+    public float KostylOpen { get { return kostylOpen; } }
+    private float kostylClosed;
+    public float KostylClosed { get { return kostylClosed; } }
 
     public float targetAngle = 0f;
     private float minAngle = 0f;
@@ -24,6 +28,20 @@ public class Rotator : MonoBehaviour
         if (targetAngle < minAngle)
         {
             targetAngle = minAngle;
+        }
+
+        if ((currentAngle > maxAngle - 1f) && (currentAngle < maxAngle + 1f))
+        {
+            kostylOpen = 1f;
+        }
+        else if ((currentAngle > minAngle - 1f) && (currentAngle < minAngle + 1f))
+        {
+            kostylClosed = 1f;
+        }
+        else
+        {
+            kostylOpen = 0f;
+            kostylClosed = 0f;
         }
 
         if (currentAngle < targetAngle)

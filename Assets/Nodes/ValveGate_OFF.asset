@@ -10,22 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: Valve3
+  m_Name: ValveGate_OFF
   m_EditorClassIdentifier: 
-  _nameGameObject: Valve (3)
-  _nameScript: ValveMinMaxAngleCheck
-  _nameProperty:
-  - IsClosed
+  _nameGameObject: Valve (1)
+  _nameScript: OutlineOnOff
+  _nameProperty: []
   _nameAction:
-  - PlayDispatcher
+  - OutlineOff
   IsUse: 1
   NextNode:
-  - PressureCheck
+  - GameOver
   PrevNode:
-  - Valve2
-  EditorPosition: {x: 1054, y: 331}
-  Conditions:
-  - Value:
-      NameProperty: IsClosed
-      Opertor: 2
-      Value: 1
+  - CustomersCheck
+  EditorPosition: {x: 472, y: 1015}
+  Conditions: []

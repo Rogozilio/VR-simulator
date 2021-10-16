@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: MainMenu
+  m_Name: ValveIN
   m_EditorClassIdentifier: 
-  _nameGameObject: Table
-  _nameScript: MainMenuControlller
+  _nameGameObject: ES_RotatorIN
+  _nameScript: Rotator
   _nameProperty:
-  - GameModeValue
+  - KostylClosed
   _nameAction: []
   IsUse: 1
   NextNode:
-  - Planshet
-  PrevNode: []
-  EditorPosition: {x: 32, y: 74}
+  - LeverIN_OFF
+  PrevNode:
+  - LeverIN_ON
+  EditorPosition: {x: 174, y: 653}
   Conditions:
   - Value:
-      NameProperty: GameModeValue
-      Opertor: 4
-      Value: 0
+      NameProperty: KostylClosed
+      Opertor: 2
+      Value: 1

@@ -13,12 +13,9 @@ public class PMeterArrowRotation : MonoBehaviour
     public bool canRotate = true;
     public float coef1 = 1f;
     public float coef2 = 1f;
-    private bool areValuesSet = false;
 
-    [SerializeField]
     private float currentPressure = 0f;
     public float CurrentPressure { get { return currentPressure; } }
-    [SerializeField]
     private float targetPressure = 0f;
     public float TargetPressure { get { return targetPressure; } set { targetPressure = value; } }
 
@@ -26,13 +23,11 @@ public class PMeterArrowRotation : MonoBehaviour
     private float minPressure = 0f;
     [SerializeField]
     private float maxPressure = 10f;
-    private float finalTargetPressure = 0f;
 
     [SerializeField]
     private float minAngle = -60f;
     [SerializeField]
     private float maxAngle = 60f;
-    [SerializeField]
     private float currentAngle = 0f;
     private float targetAngle = 0f;
 
@@ -50,7 +45,6 @@ public class PMeterArrowRotation : MonoBehaviour
         if (canRotate)
         {
             UpdateAngleAndPressure();
-            CheckPressure();
         }
     }
 
@@ -92,30 +86,5 @@ public class PMeterArrowRotation : MonoBehaviour
     private void SetArrowAngle()
     {
         transform.localEulerAngles = new Vector3(0, 0, currentAngle);
-    }
-
-    private void CheckPressure()
-    {
-        float deltaP = 0.2f;
-        if ((currentPressure >= finalTargetPressure - deltaP) && (currentPressure <= finalTargetPressure + deltaP))
-        {
-            canGoFurther = 1f;
-            //Debug.Log("Ура! Всё работает!");
-        }
-        else
-        {
-            canGoFurther = 0f;
-            //Debug.Log("Не всё работает, но это нормально");
-        }
-    }
-
-    public void DoNothing()
-    {
-        Debug.Log("Подошли к Pressure");
-    }
-
-    public void DoEverything()
-    {
-        Debug.Log("Game Over");
     }
 }

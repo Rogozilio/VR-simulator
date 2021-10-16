@@ -10,22 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: PressureCheck
+  m_Name: LeverOUT_OFF
   m_EditorClassIdentifier: 
-  _nameGameObject: ArrowOUT
-  _nameScript: PMeterArrowRotation
-  _nameProperty:
-  - CanGoFurther
+  _nameGameObject: ES_LeverOUT
+  _nameScript: OutlineOnOff
+  _nameProperty: []
   _nameAction:
-  - DoNothing
+  - OutlineOff
   IsUse: 1
   NextNode:
-  - 
+  - LeverIN_ON
   PrevNode:
-  - Valve3
-  EditorPosition: {x: 1242, y: 374}
-  Conditions:
-  - Value:
-      NameProperty: CanGoFurther
-      Opertor: 2
-      Value: 1
+  - ValveOUT
+  EditorPosition: {x: 353, y: 488}
+  Conditions: []
