@@ -17,12 +17,12 @@ MonoBehaviour:
   _nameProperty:
   - KostylClosed
   _nameAction: []
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - LeverOUT_OFF
   PrevNode:
   - LeverOUT_ON
-  EditorPosition: {x: 181, y: 436}
+  EditorPosition: {x: 268, y: 457}
   Conditions:
   - Value:
       NameProperty: KostylClosed

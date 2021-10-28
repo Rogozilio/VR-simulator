@@ -17,10 +17,10 @@ MonoBehaviour:
   _nameProperty: []
   _nameAction:
   - OutlineOff
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - GameOver
   PrevNode:
   - CustomersCheck
-  EditorPosition: {x: 472, y: 1015}
+  EditorPosition: {x: 559, y: 1036}
   Conditions: []

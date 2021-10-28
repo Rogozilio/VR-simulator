@@ -17,11 +17,11 @@ MonoBehaviour:
   _nameProperty:
   - GameModeValue
   _nameAction: []
-  IsUse: 1
+  IsUse: 0
   NextNode:
-  - LeverDetour_ON
+  - Transfer
   PrevNode: []
-  EditorPosition: {x: 53, y: 49}
+  EditorPosition: {x: 129, y: 68}
   Conditions:
   - Value:
       NameProperty: GameModeValue

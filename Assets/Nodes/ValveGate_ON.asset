@@ -17,10 +17,11 @@ MonoBehaviour:
   _nameProperty: []
   _nameAction:
   - OutlineOn
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - TurnOn
   PrevNode:
   - LeverIN_OFF
-  EditorPosition: {x: 51, y: 805}
+  - Valve3
+  EditorPosition: {x: 128, y: 844}
   Conditions: []

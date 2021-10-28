@@ -13624,6 +13624,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701615757}
   m_Mesh: {fileID: -4640150743045202880, guid: 9a7e8331ff8cb3a41b7b51bdd4d33227, type: 3}
+--- !u!1 &702157377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9075768927705960322, guid: 49fcff49c1d5e0c449a572ac11df8592, type: 3}
+  m_PrefabInstance: {fileID: 817152190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &702157381 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8156848029739791070, guid: 49fcff49c1d5e0c449a572ac11df8592, type: 3}
+  m_PrefabInstance: {fileID: 817152190}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702157377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4c2a86a6af52c45a899d8da9558db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &704854541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18147,12 +18163,12 @@ GameObject:
   - component: {fileID: 924408519}
   - component: {fileID: 924408518}
   - component: {fileID: 924408517}
-  - component: {fileID: 924408516}
   - component: {fileID: 924408515}
   - component: {fileID: 924408514}
   - component: {fileID: 924408520}
   - component: {fileID: 924408522}
   - component: {fileID: 924408521}
+  - component: {fileID: 924408516}
   m_Layer: 0
   m_Name: Valve (1)
   m_TagString: Untagged
@@ -18261,9 +18277,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3703841356984110849, guid: 36c140070c90c67478ef68a923dfbc71, type: 3}
 --- !u!23 &924408517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18312,7 +18328,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924408513}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3703841356984110849, guid: 36c140070c90c67478ef68a923dfbc71, type: 3}
 --- !u!4 &924408519
 Transform:
   m_ObjectHideFlags: 0
@@ -18321,8 +18337,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924408513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.1664, y: 3.9414, z: 1.1714}
-  m_LocalScale: {x: 0.15, y: 0.01, z: 0.15}
+  m_LocalPosition: {x: 37.1664, y: 3.927, z: 1.1714}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 19
@@ -33441,8 +33457,8 @@ MonoBehaviour:
   Notification5T: {fileID: 1405938798}
   IsTraining: 0
   mainMenuControlller: {fileID: 1648260976}
-  Planshet: {fileID: 0}
-  SCADA_Controller: {fileID: 0}
+  Planshet: {fileID: 702157377}
+  SCADA_Controller: {fileID: 702157381}
   DialIN: {fileID: 1510264155}
   DialOUT: {fileID: 1636990020}
   Valve1: {fileID: 1734708447}

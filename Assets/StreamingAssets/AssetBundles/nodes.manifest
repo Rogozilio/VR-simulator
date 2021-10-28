@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 766409301
+CRC: 4169181933
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1950e5bc154a15ec66cfd69f0dfc00cc
+    Hash: 4ff5811d135b5d697b14e6f212842b0f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 320f5519b82bde2db427d0281db91bdb
@@ -15,14 +15,18 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Nodes/Valve2.asset
 - Assets/Nodes/ValveIN.asset
+- Assets/Nodes/Transfer.asset
 - Assets/Nodes/TurnOn.asset
 - Assets/Nodes/LeverIN_ON.asset
 - Assets/Nodes/ValveGate_ON.asset
 - Assets/Nodes/LeverDetour_ON.asset
+- Assets/Nodes/Valve4.asset
 - Assets/Nodes/LeverIN_OFF.asset
 - Assets/Nodes/LeverOUT_OFF.asset
 - Assets/Nodes/ValveGate_OFF.asset
+- Assets/Nodes/Valve3.asset
 - Assets/Nodes/CustomersCheck.asset
 - Assets/Nodes/LeverDetour_OFF.asset
 - Assets/Nodes/LeverOUT_ON.asset

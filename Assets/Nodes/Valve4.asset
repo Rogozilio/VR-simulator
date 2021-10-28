@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: LeverDetour_OFF
+  m_Name: Valve4
   m_EditorClassIdentifier: 
-  _nameGameObject: ES_LeverDetour
-  _nameScript: OutlineOnOff
+  _nameGameObject: Valve (4)
+  _nameScript: ValveMinMaxAngleCheck
   _nameProperty: []
   _nameAction:
-  - OutlineOff
+  - PlayDispatcher
   IsUse: 0
   NextNode:
-  - Valve4
+  - LeverOUT_ON
   PrevNode:
-  - ValveDetour
-  EditorPosition: {x: 444, y: 303}
+  - LeverDetour_OFF
+  EditorPosition: {x: 667, y: 334}
   Conditions: []

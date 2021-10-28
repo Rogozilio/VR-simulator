@@ -17,11 +17,11 @@ MonoBehaviour:
   _nameProperty: []
   _nameAction:
   - Show
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - 
   PrevNode:
   - CustomersCheck
   - ValveGate_OFF
-  EditorPosition: {x: 618, y: 1090}
+  EditorPosition: {x: 705, y: 1111}
   Conditions: []

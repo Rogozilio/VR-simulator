@@ -17,12 +17,12 @@ MonoBehaviour:
   _nameProperty:
   - KostylOpen
   _nameAction: []
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - LeverDetour_OFF
   PrevNode:
   - LeverDetour_ON
-  EditorPosition: {x: 207, y: 222}
+  EditorPosition: {x: 294, y: 243}
   Conditions:
   - Value:
       NameProperty: KostylOpen
