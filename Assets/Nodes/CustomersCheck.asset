@@ -17,12 +17,12 @@ MonoBehaviour:
   _nameProperty:
   - KostylEnding
   _nameAction: []
-  IsUse: 0
+  IsUse: 1
   NextNode:
   - ValveGate_OFF
   PrevNode:
   - TurnOn
-  EditorPosition: {x: 388, y: 976}
+  EditorPosition: {x: 933, y: 456}
   Conditions:
   - Value:
       NameProperty: KostylEnding

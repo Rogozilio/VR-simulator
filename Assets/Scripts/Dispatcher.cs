@@ -46,22 +46,24 @@ public class Dispatcher : MonoBehaviour
     //{
     //    _audio.PlayOneShot(Notification5T);
     //}
+
     public void Play()
     {
-        if(MainMenuControlller.GameMode == 1)
+        if (MainMenuControlller.GameMode == 1)
         {
             if (index < ClipsT.Length)
             {
-                _audio.PlayOneShot(ClipsT[index++]);
+                _audio.PlayOneShot(ClipsT[index]);
+                index++;
             }
         }
         else if (MainMenuControlller.GameMode == 2)
         {
             if (index < Clips.Length)
             {
-                _audio.PlayOneShot(Clips[index++]);
+                _audio.PlayOneShot(Clips[index]);
+                index++;
             }
         }
     }
-
 }

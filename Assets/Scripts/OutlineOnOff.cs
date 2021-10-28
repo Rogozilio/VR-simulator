@@ -13,4 +13,10 @@ public class OutlineOnOff : MonoBehaviour
     {
         gameObject.GetComponent<Outline>().enabled = false;
     }
+
+    public void PlayDispatcher()
+    {
+        Dispatcher dispatcher = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Dispatcher>();
+        dispatcher.Play();
+    }
 }

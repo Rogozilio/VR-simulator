@@ -10,20 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f0fceef13873bf4696767ad5516d91f, type: 3}
-  m_Name: MenuController
+  m_Name: TurnOn_Exam
   m_EditorClassIdentifier: 
-  _nameGameObject: Table
-  _nameScript: MainMenuControlller
-  _nameProperty:
-  - GameModeValue
-  _nameAction: []
+  _nameGameObject: PressureStats
+  _nameScript: CustomersRandomizer
+  _nameProperty: []
+  _nameAction:
+  - TurnOn
   IsUse: 1
   NextNode:
-  - Transfer
-  PrevNode: []
-  EditorPosition: {x: 685, y: 31}
-  Conditions:
-  - Value:
-      NameProperty: GameModeValue
-      Opertor: 2
-      Value: 1
+  - CustomersCheck_Exam
+  PrevNode:
+  - ValveIN_Exam
+  EditorPosition: {x: 26, y: 453}
+  Conditions: []

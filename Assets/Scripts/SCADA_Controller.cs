@@ -120,7 +120,7 @@ public class SCADA_Controller : MonoBehaviour
         if (bag.OnBag)
         {
             transform.position = Bag.transform.position;
-            transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y +180, Bag.transform.localEulerAngles.z + 90);
+            transform.localEulerAngles = new Vector3(Bag.transform.localEulerAngles.x + 180, Bag.transform.localEulerAngles.y + 180, Bag.transform.localEulerAngles.z + 90);
         }
     }
     public void PlayDispatcher()

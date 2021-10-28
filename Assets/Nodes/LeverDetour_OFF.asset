@@ -17,10 +17,11 @@ MonoBehaviour:
   _nameProperty: []
   _nameAction:
   - OutlineOff
-  IsUse: 0
+  - PlayDispatcher
+  IsUse: 1
   NextNode:
-  - Valve4
+  - LeverOUT_ON
   PrevNode:
   - ValveDetour
-  EditorPosition: {x: 444, y: 303}
+  EditorPosition: {x: 1031, y: 122}
   Conditions: []

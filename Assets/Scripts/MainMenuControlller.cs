@@ -12,23 +12,23 @@ public class MainMenuControlller : MonoBehaviour
     public GameObject mainButtons;
     public GameObject settingsObjects;
     public GameObject Bag;
-    public AudioSource Notification1;
+    //public AudioSource Notification1;
     public AudioSource Noise;
-    public AudioSource Notification1T;
-    public AudioSource Notification2T;
-    public AudioSource Notification3T;
-    public AudioSource Notification4T;
-    public AudioSource Notification5T;
-    public bool IsTraining;
+    //public AudioSource Notification1T;
+    //public AudioSource Notification2T;
+    //public AudioSource Notification3T;
+    //public AudioSource Notification4T;
+    //public AudioSource Notification5T;
+    //public bool IsTraining;
     public MainMenuControlller mainMenuControlller;
     public GameObject Planshet;
     public SCADA_Controller SCADA_Controller;
     public GameObject DialIN;
     public GameObject DialOUT;
-    public GameObject Valve1;
-    public GameObject Valve2;
-    public GameObject Valve3;
-    public GameObject Valve4;
+    //public GameObject Valve1;
+    //public GameObject Valve2;
+    //public GameObject Valve3;
+    //public GameObject Valve4;
 
     public static float GameMode => _gameMode;
     public float GameModeValue => _gameMode;
@@ -37,7 +37,7 @@ public class MainMenuControlller : MonoBehaviour
 
     public void LoadGameSceneExam()
     {
-        IsTraining = false;
+        //IsTraining = false;
         Player.transform.position = new Vector3(38.3f, 0.04f, -6f);
         Debug.Log("Игрок перемещён");
         //Notification1.Play();
@@ -49,16 +49,16 @@ public class MainMenuControlller : MonoBehaviour
 
     public void LoadGameSceneTraining()
     {
-        IsTraining = true;
-        Player.transform.position = new Vector3(10, 0, -8);
-        Debug.Log("Игрок перемещён.Режим тренировки");
+        //IsTraining = true;
+        Player.transform.position = new Vector3(38.3f, 0.04f, -6f);
+        Debug.Log("Игрок перемещён. Режим тренировки");
         //Notification1T.Play();
         Noise.Play();
-        AddOutline(Planshet);
-        AddOutlineVisible(DialIN);
-        AddOutlineVisible(DialOUT);
         _gameMode = 1f;
-        State = 1f;
+        //AddOutline(Planshet);
+        //AddOutlineVisible(DialIN);
+        //AddOutlineVisible(DialOUT);
+        //State = 1f;
         //SceneManager.LoadScene("TestingTeleportation", LoadSceneMode.Single);
     }
 
@@ -105,16 +105,16 @@ public class MainMenuControlller : MonoBehaviour
         switch(State)
         {
             case 1f:
-                Notification2T.Play();
+                //Notification2T.Play();
                 break;
             case 2f:
-                Notification3T.Play();
+                //Notification3T.Play();
                 break;
             case 3f:
-                Notification4T.Play();
+                //Notification4T.Play();
                 break;
             case 4f:
-                Notification5T.Play();
+                //Notification5T.Play();
                 break;
             default:
                 Debug.Log("Незафиксированное состояние");
@@ -124,56 +124,56 @@ public class MainMenuControlller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (mainMenuControlller.IsTraining == true)
-        {
-            if (SCADA_Controller.PressuresTransferredCorrectly == 1f)
-            {
-                AddOutline(Valve1);
-                RemoveOutline(Planshet);
-                RemoveOutline(DialIN);
-                RemoveOutline(DialOUT);
-                State = 2f;
-                //Notification2T.Play();
-            }
-            else State = 1f;
+        //if (mainMenuControlller.IsTraining == true)
+        //{
+        //    if (SCADA_Controller.PressuresTransferredCorrectly == 1f)
+        //    {
+        //        AddOutline(Valve1);
+        //        RemoveOutline(Planshet);
+        //        RemoveOutline(DialIN);
+        //        RemoveOutline(DialOUT);
+        //        State = 2f;
+        //        //Notification2T.Play();
+        //    }
+        //    else State = 1f;
 
-            if (Valve1.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f)
-            {
-                AddOutline(Valve4);
-                RemoveOutline(Valve1);
-                State = 3f;
-                //Notification3T.Play();
-            }
-            else if (Valve4.GetComponent<Outline>() != null)
-            {
-                RemoveOutline(Valve4);
-            }
+        //    if (Valve1.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f)
+        //    {
+        //        AddOutline(Valve4);
+        //        RemoveOutline(Valve1);
+        //        State = 3f;
+        //        //Notification3T.Play();
+        //    }
+        //    else if (Valve4.GetComponent<Outline>() != null)
+        //    {
+        //        RemoveOutline(Valve4);
+        //    }
 
-            if ((Valve1.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f) && (Valve4.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f))
-            {
-                AddOutlineVisible(Valve2);
-                RemoveOutline(Valve4);
-                State = 4f;
-                //Notification4T.Play();
-            }
-            else if (Valve2.GetComponent<Outline>() != null)
-            {
-                RemoveOutline(Valve2);
-            }
+        //    if ((Valve1.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f) && (Valve4.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f))
+        //    {
+        //        AddOutlineVisible(Valve2);
+        //        RemoveOutline(Valve4);
+        //        State = 4f;
+        //        //Notification4T.Play();
+        //    }
+        //    else if (Valve2.GetComponent<Outline>() != null)
+        //    {
+        //        RemoveOutline(Valve2);
+        //    }
 
-            if ((Valve1.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f) && (Valve4.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f) && (Valve2.GetComponent<ValveMinMaxAngleCheck>().IsClosed == 1f))
-            {
-                AddOutlineVisible(Valve3);
-                RemoveOutline(Valve2);
-                State = 5f;
-                //Notification5T.Play();
-            }
-            else if (Valve3.GetComponent<Outline>() != null)
-            {
-                RemoveOutline(Valve3);
-            }
+        //    if ((Valve1.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f) && (Valve4.GetComponent<ValveMinMaxAngleCheck>().IsOpen == 1f) && (Valve2.GetComponent<ValveMinMaxAngleCheck>().IsClosed == 1f))
+        //    {
+        //        AddOutlineVisible(Valve3);
+        //        RemoveOutline(Valve2);
+        //        State = 5f;
+        //        //Notification5T.Play();
+        //    }
+        //    else if (Valve3.GetComponent<Outline>() != null)
+        //    {
+        //        RemoveOutline(Valve3);
+        //    }
 
-            //CheckState();
-        }
+        //    //CheckState();
+        //}
     }
 }

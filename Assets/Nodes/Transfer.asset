@@ -17,10 +17,11 @@ MonoBehaviour:
   _nameProperty: []
   _nameAction:
   - PlayDispatcher
-  IsUse: 0
+  - PlayDispatcher
+  IsUse: 1
   NextNode:
   - LeverDetour_ON
   PrevNode:
   - MenuController
-  EditorPosition: {x: 348, y: 101}
+  EditorPosition: {x: 888, y: 31}
   Conditions: []

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4169181933
+CRC: 3362692915
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4ff5811d135b5d697b14e6f212842b0f
+    Hash: babe6f83aaa690c1c76e7b076e27b838
   TypeTreeHash:
     serializedVersion: 2
     Hash: 320f5519b82bde2db427d0281db91bdb
@@ -16,20 +16,27 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/Nodes/Valve2.asset
+- Assets/Nodes/ValveOUT_Exam.asset
+- Assets/Nodes/ValveIN_Exam.asset
 - Assets/Nodes/ValveIN.asset
-- Assets/Nodes/Transfer.asset
+- Assets/Nodes/MenuController_Exam.asset
 - Assets/Nodes/TurnOn.asset
+- Assets/Nodes/Transfer.asset
 - Assets/Nodes/LeverIN_ON.asset
+- Assets/Nodes/CustomersCheck_Exam.asset
 - Assets/Nodes/ValveGate_ON.asset
 - Assets/Nodes/LeverDetour_ON.asset
 - Assets/Nodes/Valve4.asset
 - Assets/Nodes/LeverIN_OFF.asset
+- Assets/Nodes/Transfer_Exam.asset
 - Assets/Nodes/LeverOUT_OFF.asset
 - Assets/Nodes/ValveGate_OFF.asset
 - Assets/Nodes/Valve3.asset
 - Assets/Nodes/CustomersCheck.asset
+- Assets/Nodes/ValveDetour_Exam.asset
 - Assets/Nodes/LeverDetour_OFF.asset
 - Assets/Nodes/LeverOUT_ON.asset
+- Assets/Nodes/TurnOn_Exam.asset
 - Assets/Nodes/GameOver.asset
 - Assets/Nodes/MenuController.asset
 - Assets/Nodes/ValveDetour.asset

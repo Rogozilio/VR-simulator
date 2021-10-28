@@ -19,8 +19,7 @@ MonoBehaviour:
   - PlayDispatcher
   IsUse: 0
   NextNode:
-  - ValveGate_ON
-  PrevNode:
-  - LeverIN_OFF
-  EditorPosition: {x: 615, y: 778}
+  - 
+  PrevNode: []
+  EditorPosition: {x: 1131, y: 181}
   Conditions: []

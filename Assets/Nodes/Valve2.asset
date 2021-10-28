@@ -19,8 +19,7 @@ MonoBehaviour:
   - PlayDispatcher
   IsUse: 0
   NextNode:
-  - LeverIN_ON
-  PrevNode:
-  - LeverOUT_OFF
+  - 
+  PrevNode: []
   EditorPosition: {x: 617, y: 547}
   Conditions: []
