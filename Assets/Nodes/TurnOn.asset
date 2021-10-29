@@ -17,7 +17,7 @@ MonoBehaviour:
   _nameProperty: []
   _nameAction:
   - TurnOn
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - CustomersCheck
   PrevNode:

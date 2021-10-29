@@ -18,7 +18,7 @@ MonoBehaviour:
   _nameAction:
   - PlayDispatcher
   - PlayDispatcher
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - LeverDetour_ON
   PrevNode:

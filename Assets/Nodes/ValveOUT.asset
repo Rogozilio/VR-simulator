@@ -17,7 +17,7 @@ MonoBehaviour:
   _nameProperty:
   - KostylClosed
   _nameAction: []
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - LeverOUT_OFF
   PrevNode:

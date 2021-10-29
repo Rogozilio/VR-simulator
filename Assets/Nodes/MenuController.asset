@@ -17,7 +17,7 @@ MonoBehaviour:
   _nameProperty:
   - GameModeValue
   _nameAction: []
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - Transfer
   PrevNode: []

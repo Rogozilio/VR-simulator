@@ -17,7 +17,7 @@ MonoBehaviour:
   _nameProperty: []
   _nameAction:
   - OutlineOn
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - ValveDetour
   PrevNode:

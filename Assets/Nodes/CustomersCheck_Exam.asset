@@ -17,7 +17,7 @@ MonoBehaviour:
   _nameProperty:
   - KostylEnding
   _nameAction: []
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - GameOver
   PrevNode:

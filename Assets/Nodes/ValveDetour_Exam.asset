@@ -17,7 +17,7 @@ MonoBehaviour:
   _nameProperty:
   - KostylOpen
   _nameAction: []
-  IsUse: 1
+  IsUse: 0
   NextNode:
   - ValveOUT_Exam
   PrevNode:
