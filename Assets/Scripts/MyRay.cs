@@ -5,7 +5,8 @@ using UnityEngine;
 public class MyRay : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    private Vector3 SeconPoint;
+    public GameObject FakePoint;
+    private Vector3 addition;
     bool RayHitManometr;
     Vector3 PositionForPanel;
     public GameObject Panel;
@@ -21,6 +22,7 @@ public class MyRay : MonoBehaviour
     private void Start()
     {
         {
+            addition = new Vector3(0.05f, -0.05f, 0);
             lineRenderer = gameObject.GetComponent<LineRenderer>();
             lineRenderer.enabled = false;
             timer = 0f;
@@ -43,6 +45,7 @@ public class MyRay : MonoBehaviour
             //gradient.SetKeys(colorKey, alphaKey);
 
             //lineRenderer.colorGradient = gradient;
+
         }
     }
     //public Transform target;
@@ -59,8 +62,10 @@ public class MyRay : MonoBehaviour
             timer = 0f;
         }
 
-        Ray ray = new Ray (transform.position, transform.forward);
-        lineRenderer.SetPosition(0, transform.position);
+        var direction = (transform.position - FakePoint.transform.position) / (transform.position - FakePoint.transform.position).magnitude;
+
+        Ray ray = new Ray (transform.position + addition, direction);
+        lineRenderer.SetPosition(0, transform.position + addition);
         RaycastHit hitInfo;
 
         if (Physics.Raycast(ray, out hitInfo, 1))
