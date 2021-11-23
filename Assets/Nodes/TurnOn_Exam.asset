@@ -22,5 +22,5 @@ MonoBehaviour:
   - CustomersCheck_Exam
   PrevNode:
   - ValveIN_Exam
-  EditorPosition: {x: 26, y: 453}
+  EditorPosition: {x: 38, y: 623}
   Conditions: []

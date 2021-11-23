@@ -22,7 +22,7 @@ MonoBehaviour:
   - ValveOUT_Exam
   PrevNode:
   - Transfer_Exam
-  EditorPosition: {x: 25, y: 148}
+  EditorPosition: {x: 37, y: 318}
   Conditions:
   - Value:
       NameProperty: KostylOpen

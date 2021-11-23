@@ -23,5 +23,5 @@ MonoBehaviour:
   - GameOver
   PrevNode:
   - CustomersCheck
-  EditorPosition: {x: 1101, y: 456}
+  EditorPosition: {x: 1113, y: 626}
   Conditions: []

@@ -5,7 +5,8 @@ using Valve.VR.InteractionSystem;
 
 public class SwitchAlign : MonoBehaviour
 {
-    public LeverRotation Lever;
+    //public LeverRotation Lever;
+    public LinearLever Lever;
     private CircularDrive cd;
     private Interactable inter;
     private float midAngle;

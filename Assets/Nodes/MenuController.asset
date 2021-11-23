@@ -21,7 +21,7 @@ MonoBehaviour:
   NextNode:
   - Transfer
   PrevNode: []
-  EditorPosition: {x: 685, y: 31}
+  EditorPosition: {x: 697, y: 201}
   Conditions:
   - Value:
       NameProperty: GameModeValue

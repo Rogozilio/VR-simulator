@@ -22,5 +22,5 @@ MonoBehaviour:
   - ValveDetour_Exam
   PrevNode:
   - MenuController_Exam
-  EditorPosition: {x: 268, y: 33}
+  EditorPosition: {x: 280, y: 203}
   Conditions: []

@@ -23,5 +23,5 @@ MonoBehaviour:
   - LeverDetour_ON
   PrevNode:
   - MenuController
-  EditorPosition: {x: 888, y: 31}
+  EditorPosition: {x: 900, y: 201}
   Conditions: []

@@ -22,7 +22,7 @@ MonoBehaviour:
   - LeverOUT_OFF
   PrevNode:
   - LeverOUT_ON
-  EditorPosition: {x: 843, y: 239}
+  EditorPosition: {x: 855, y: 409}
   Conditions:
   - Value:
       NameProperty: KostylClosed

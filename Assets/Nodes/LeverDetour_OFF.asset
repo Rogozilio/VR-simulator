@@ -23,5 +23,5 @@ MonoBehaviour:
   - LeverOUT_ON
   PrevNode:
   - ValveDetour
-  EditorPosition: {x: 1031, y: 122}
+  EditorPosition: {x: 1043, y: 292}
   Conditions: []

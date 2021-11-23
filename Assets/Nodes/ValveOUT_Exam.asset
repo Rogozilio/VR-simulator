@@ -22,7 +22,7 @@ MonoBehaviour:
   - ValveIN_Exam
   PrevNode:
   - ValveDetour_Exam
-  EditorPosition: {x: 27, y: 246}
+  EditorPosition: {x: 39, y: 416}
   Conditions:
   - Value:
       NameProperty: KostylClosed

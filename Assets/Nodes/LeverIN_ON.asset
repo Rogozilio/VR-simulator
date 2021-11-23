@@ -22,5 +22,5 @@ MonoBehaviour:
   - ValveIN
   PrevNode:
   - LeverOUT_OFF
-  EditorPosition: {x: 684, y: 343}
+  EditorPosition: {x: 696, y: 513}
   Conditions: []

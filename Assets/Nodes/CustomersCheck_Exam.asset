@@ -22,7 +22,7 @@ MonoBehaviour:
   - GameOver
   PrevNode:
   - TurnOn_Exam
-  EditorPosition: {x: 232, y: 453}
+  EditorPosition: {x: 244, y: 623}
   Conditions:
   - Value:
       NameProperty: KostylEnding

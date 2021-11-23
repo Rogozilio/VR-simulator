@@ -22,7 +22,7 @@ MonoBehaviour:
   - LeverDetour_OFF
   PrevNode:
   - LeverDetour_ON
-  EditorPosition: {x: 855, y: 122}
+  EditorPosition: {x: 867, y: 292}
   Conditions:
   - Value:
       NameProperty: KostylOpen

@@ -23,5 +23,5 @@ MonoBehaviour:
   PrevNode:
   - MenuController
   - Transfer
-  EditorPosition: {x: 684, y: 122}
+  EditorPosition: {x: 696, y: 292}
   Conditions: []
